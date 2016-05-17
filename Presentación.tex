@@ -1,12 +1,76 @@
 \documentclass{beamer}
 \usepackage[spanish]{babel}
-\usepackage[latin1]{inputenc}
-
+\usepackage[utf8]{inputenc}
+\usetheme{AnnArbor}
+\usecolortheme{crane}
+\useoutertheme{shadow}
+\useinnertheme{rectangles}
+\usepackage{multicol}
+\title[CMTC]{Cadenas de Markov en tiempo continuo}
+\author[Santiago,Jesus,Fernando]{Santiago de Diego, Jesús Bueno, Fernando de la Cruz, Javier Ruiz}
+\date{}
 \begin{document}
+\frame{\titlepage}
 
+\AtBeginSection{
 \begin{frame}
-    \frametitle{Marsupiales}
-    Canguro, Koala, Wombat...
+  \frametitle{Índice}
+  \begin{multicols}{2}
+  \tableofcontents[currentsection]
+  \end{multicols}   
+\end{frame}
+}
+
+\AtBeginSubsection{
+\begin{frame}
+  \frametitle{Índice}
+  \begin{multicols}{2}
+  \tableofcontents[currentsection,currentsubsection]
+  \end{multicols}
+\end{frame}
+}
+
+\section{Introducción}
+\begin{frame}
+    \frametitle{Introducción}
+    Esto es una introducción
+       \begin{block}{Mi bloque}
+  		Esto es un bloque
+  		\end{block}
 \end{frame}
 
+\section{Definición y propiedades}
+\begin{frame}
+    \frametitle{Definición y propiedades}
+    Esto es una introducción
+\end{frame}
+
+\section{Probabilidades de transición}
+\begin{frame}
+    \frametitle{Probabilidades de transición}
+    Esto es una introducción
+\end{frame}
+
+\section{Clasificación de los estados}
+\begin{frame}
+    \frametitle{Clasificación de los estados}
+    Esto es una introducción
+\end{frame}
+
+\section{Teoremas límite}
+\begin{frame}
+    \frametitle{Teoremas límite}
+    Esto es una introducción
+\end{frame}
+
+\section{Ejemplos}
+\subsection{Ejemplo 1}
+\begin{frame}
+    \frametitle{Ejemplos}
+    Esto es una introducción
+\end{frame}
+\begin{frame}
+    \frametitle{Ejemplo 1}
+    Esto es una introducción
+\end{frame}
 \end{document}
