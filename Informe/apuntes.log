@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.24)  17 MAY 2016 10:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.24)  17 MAY 2016 12:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -427,34 +427,75 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 16.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+Overfull \hbox (31.81985pt too wide) in paragraph at lines 16--16
+ [][] 
+ []
+
 \c@theorem=\count106
 \c@lemma=\count107
 \c@proof=\count108
- [1
+[1
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./apun
-tes.toc)
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./apuntes.toc)
 \tf@toc=\write3
 \openout3 = `apuntes.toc'.
 
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 40--47
 
-[2] [3] (./apuntes.aux) ) 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--47
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 47--53
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 54.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 54.
+
+<img/grafo.png, id=21, 646.415pt x 113.42375pt>
+File: img/grafo.png Graphic file (type png)
+ <use img/grafo.png>
+Package pdftex.def Info: img/grafo.png used on input line 64.
+(pdftex.def)             Requested size: 272.99881pt x 47.90244pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--68
+
+ []
+
+[4 <./img/grafo.png>] [5] (./apuntes.aux) ) 
 Here is how much of TeX's memory you used:
- 2609 strings out of 493089
- 33671 string characters out of 6134841
- 91797 words of memory out of 5000000
- 6053 multiletter control sequences out of 15000+600000
+ 2637 strings out of 493089
+ 34096 string characters out of 6134841
+ 94810 words of memory out of 5000000
+ 6075 multiletter control sequences out of 15000+600000
  12403 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,7n,24p,270b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr17.pfb>
-Output written on apuntes.pdf (3 pages, 37539 bytes).
+ 37i,7n,24p,384b,227s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
+blic/amsfonts/symbols/msbm10.pfb>
+Output written on apuntes.pdf (5 pages, 137072 bytes).
 PDF statistics:
- 26 PDF objects out of 1000 (max. 8388607)
- 17 compressed objects within 1 object stream
+ 59 PDF objects out of 1000 (max. 8388607)
+ 40 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
