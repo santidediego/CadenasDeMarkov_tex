@@ -2,11 +2,12 @@
 \contentsline {subsection}{\numberline {1.1}Cadenas de Markov}{3}
 \contentsline {subsection}{\numberline {1.2}Diferencia entre tiempo discreto y tiempo continuo}{3}
 \contentsline {section}{\numberline {2}Definici\IeC {\'o}n y propiedades}{3}
-\contentsline {subsection}{\numberline {2.1}Relaci\IeC {\'o}n con la teor\IeC {\'\i }a de aut\IeC {\'o}matas}{3}
-\contentsline {section}{\numberline {3}Probabilidades de transici\IeC {\'o}n}{5}
-\contentsline {section}{\numberline {4}Ecuaci\IeC {\'o}n de Kolmogorov}{5}
-\contentsline {section}{\numberline {5}Clasificaci\IeC {\'o}n de los estados}{5}
-\contentsline {section}{\numberline {6}Teoremas l\IeC {\'\i }mite}{5}
-\contentsline {section}{\numberline {7}Ejemplos}{5}
-\contentsline {subsection}{\numberline {7.1}Ejemplo 1}{5}
-\contentsline {subsection}{\numberline {7.2}Ejemplo 2}{5}
+\contentsline {subsection}{\numberline {2.1}Definici\IeC {\'o}n}{3}
+\contentsline {subsection}{\numberline {2.2}Relaci\IeC {\'o}n con la teor\IeC {\'\i }a de aut\IeC {\'o}matas}{4}
+\contentsline {section}{\numberline {3}Probabilidades de transici\IeC {\'o}n}{6}
+\contentsline {section}{\numberline {4}Ecuaci\IeC {\'o}n de Kolmogorov}{6}
+\contentsline {section}{\numberline {5}Clasificaci\IeC {\'o}n de los estados}{6}
+\contentsline {section}{\numberline {6}Teoremas l\IeC {\'\i }mite}{6}
+\contentsline {section}{\numberline {7}Ejemplos}{6}
+\contentsline {subsection}{\numberline {7.1}Ejemplo 1}{6}
+\contentsline {subsection}{\numberline {7.2}Ejemplo 2}{6}

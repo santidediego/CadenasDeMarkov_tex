@@ -33,7 +33,22 @@ Este tipo de procesos estocásticos tienen mucho interés a la hora de modelar d
 \subsection{Diferencia entre tiempo discreto y tiempo continuo}
 La principal diferencia entre cadenas de Markov en tiempo discreto y tiempo continuo es, como dice el propio nombre, el tiempo. En las cadenas de Markov en tiempo continuo, consideramos un $t\in T \subset \mathbb{R}$ mientras que en las cadenas de Markov en tiempo discreto, trabajamos con instantes de tiempo de la forma $t\in \mathbb{N}$.
 \section{Definición y propiedades}
+\subsection{Definición}
+Primero de todo, definiremos una Cadena de Markov como:
+\\\\
+\textbf{Definición: Cadena de Markov}
+\\
+Sea $\{\mathbb{X}_t\}_{t\geq 0}$ un proceso estocástico en tiempo continuo, esto es, $t\in [0,T]$ con $T\in \mathbb{R}$ que toma valores en un conjunto numerable $E$. Decimos que $\{\mathbb{X}_t\}_{t\geq 0}$ es una Cadena de Markov en tiempo continuo si $\forall t,s\geq 0$ y $\forall i,j,x_u\in E$ con $0\geq u \geq s$, se cumple que:
+$$P(\mathbb{X}_{t+s}=j \, | \, \mathbb{X}_s =i \, , \,  \mathbb{X}_u =  u \,\, \forall 0\leq u\leq s)=P(\mathbb{X}_{t+s}=j \, | \, \mathbb{X}_s = i)$$
+Es decir, podemos definir una Cadena de Markov como un proceso estocástico	en el que el futuro sólo depende del presente, independientemente de sus estados pasados. Además también podemos considerar la definición alternativa:
+\\\\
+\textbf{Definición 2: Cadena de Markov}
+\\
+El proceso estocástico $\{\mathbb{X}_t \, , \, t\in [0,\infty]\}$ es una Cadena de Markov en tiempo continuo si para cualquier entero $n\geq 0$, cualesquiera $0\leq t_0 < t_1 < \ldots < t_{n+1}$ y $i_0,\ldots , i_n,i_{n+1}\in S$ se verifica:
+$$P(\mathbb{X}_{t_{n+1}}=i_{n+1}\, | \, \mathbb{X}_{t_0}=i_0 , \ldots \mathbb{X}_{t_n}=i_n)=P(\mathbb{X}_{t_{n+1}}=i_{n+1}\, | \, \mathbb{X}_{t_n}=i_n)$$
 
+Una vez vista la definición podemos definir las propiedades de una Cadena de Markov.
+\subsection{Propiedades}
 
 
 \subsection{Relación con la teoría de autómatas}
@@ -41,7 +56,7 @@ En concreto, podemos asociar a una cadena de Markov un grafo, como veremos más 
 \\\\
 Presentamos primero un concepto preeliminar que resulta imprescindible para comprender lo siguiente:
 \\\\
-\textbf{Definición: cadena de Markov homogénea en tiempo continuo}
+\textbf{Definición: Cadena de Markov homogénea en tiempo continuo}
 \\
 Una CMTC se dice homogénea si la probabilidad de ir del estado $i$ al estado $j$ no depende del instante de tiempo en el que se encuentra la cadena, formalmente esto es:
 $$P(\mathbb{X}_n=j \, | \, \mathbb{X}_{n-1}=i)=P(\mathbb{X}_1=j \, | \, \mathbb{X}_0=i)$$
@@ -65,7 +80,10 @@ Una vez presentada la definición de grafo asociado a una CMTC-h, podemos establ
   \caption{Ejemplo de grafo de una CMTC-h}
   \label{fig:ejemplo}
 \end{figure}
-
+\\
+En el grafo de la izquierda aparecen 3 estados, que corresponden a las variables aleatorias $\mathbb{X}_1$, $\mathbb{X}_2$ y $\mathbb{X}_3$ y representadas como $\lambda_0$, $\lambda_1$, $\mu_1$, $\mu_2$ aparecen las 4 probabilidades de transición. Por último, las flechas indican la dirección en la que se produce la transición.
+\\\\
+El grafo de la derecha es idéntico pero corresponde a las variables aleatorias $\mathbb{X}_{n-1}$, $\mathbb{X}_n$ y $\mathbb{X}_{n+1}$. Además, según lo visto anteriormente tenemos que el grafo corresponde a la manera usual de representar un autómata finito no determinista.
 \section{Probabilidades de transición}
 \section{Ecuación de Kolmogorov}
 \section{Clasificación de los estados}
