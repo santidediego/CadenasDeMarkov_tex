@@ -22,11 +22,11 @@
 \newpage
 \section{Introducción}
 \subsection{Cadenas de Markov}
-Primero de todo, presentamos una introducción a las Cadenas de Markov de forma genérica. Como es conocido, las cadenas de Markov son procesos de corta memoria en el sentido de que solo recuerdan el último estado visitado para decidir cual sería el próximo. En procesos con larga memoria el valor que toma el proceso en cada paso depende de todo el pasado.
+Primero de todo, presentamos una introducción a las Cadenas de Markov de forma genérica. Como ya sabemos, las cadenas de Markov son procesos de corta memoria en el sentido de que solo recuerdan el último estado visitado para decidir cual sería el próximo. En procesos con larga memoria el valor que toma el proceso en cada paso depende de todo el pasado.
 
 Formalizando el concepto, el proceso $\{\mathbb{X}_n \}_{n\in \mathbb{N}}$ con espacio de estados $E$ es una cadena de Markov si:
 
-$$P(\mathbb{X}_{n+1}=y \, | \, \mathbb{X}_n = x_n , \ldots , \mathbb{X}_0 = x_0)=P(\mathbb{X}_{n+1}=y \, | \, {X_n=x_n})$$
+$$P(\mathbb{X}_{n+1}=y \, | \, \mathbb{X}_n = x_n , \ldots , \mathbb{X}_0 = x_0)=P(\mathbb{X}_{n+1}=y \, | \, {\mathbb{X}_n=x_n})$$
 
 Este tipo de procesos estocásticos tienen mucho interés a la hora de modelar determinados fenómenos, como por ejemplo el tiempo de espera a un servidor en función de la tasa de llegada de los clientes.
 
@@ -45,26 +45,35 @@ Es decir, podemos definir una Cadena de Markov como un proceso estocástico	en e
 \textbf{Definición 2: Cadena de Markov}
 \\
 El proceso estocástico $\{\mathbb{X}_t \, , \, t\in [0,\infty]\}$ es una Cadena de Markov en tiempo continuo si para cualquier entero $n\geq 0$, cualesquiera $0\leq t_0 < t_1 < \ldots < t_{n+1}$ y $i_0,\ldots , i_n,i_{n+1}\in S$ se verifica:
-$$P(\mathbb{X}_{t_{n+1}}=i_{n+1}\, | \, \mathbb{X}_{t_0}=i_0 , \ldots \mathbb{X}_{t_n}=i_n)=P(\mathbb{X}_{t_{n+1}}=i_{n+1}\, | \, \mathbb{X}_{t_n}=i_n)$$
-
-Una vez vista la definición podemos definir las propiedades de una Cadena de Markov.
-\subsection{Propiedades}
-
-
-\subsection{Relación con la teoría de autómatas}
-En concreto, podemos asociar a una cadena de Markov un grafo, como veremos más abajo. De esta forma, el grafo resultante se comporta de igual manera que un \textbf{autómata finito}, relacionándose de esta forma las cadenas de Markov con la teoría de autómatas.
-\\\\
-Presentamos primero un concepto preeliminar que resulta imprescindible para comprender lo siguiente:
+$$P(\mathbb{X}_{t_{n+1}}=i_{n+1}\, | \, \mathbb{X}_{t_0}=i_0 , \ldots \mathbb{X}_{t_n}=i_n)=P(\mathbb{X}_{t_{n+1}}=i_{n+1}\, | \, \mathbb{X}_{t_n}=i_n)$$\\
+Además, introducimos también el concepto de Cadena de Markov en tiempo continuo homogénea:
 \\\\
 \textbf{Definición: Cadena de Markov homogénea en tiempo continuo}
 \\
 Una CMTC se dice homogénea si la probabilidad de ir del estado $i$ al estado $j$ no depende del instante de tiempo en el que se encuentra la cadena, formalmente esto es:
 $$P(\mathbb{X}_n=j \, | \, \mathbb{X}_{n-1}=i)=P(\mathbb{X}_1=j \, | \, \mathbb{X}_0=i)$$
-Una vez entendido este concepto introducimos por tanto la siguiente definición:
-\\\\
-\textbf{Definición: Grafo asociado a una CMTC-h}
+Una vez vistas estas definiciones podemos ver las propiedades de una Cadena de Markov.
+\subsection{Propiedades}
+Podemos notar dos propiedades fundamentales en cuanto a CMTC, que son:
+\subsubsection{Primera propiedad}
+$P(\mathbb{X}_{t_{n+h}}=i_{n+h}, h=1,\ldots m \, | \, \mathbb{X}_{t_k}=i_k, k=0,\ldots ,n)=P(\mathbb{X}_{t_{n+h}}=i_{n+h}, h=1,\ldots m\, |\, \mathbb{X}_{t_n}=i_n )$
 \\
-$G=(E,U,W)$ es el grafo asociado a una CMTC homogénea sii:
+$\forall 0 \leq t_1< t_2, \ldots , < t_n+m\, , \forall i_k\in S, k=0,\ldots , n+m$
+\begin{proof}
+
+\end{proof}
+\subsubsection{Segunda propiedad}
+\begin{proof}
+
+\end{proof}
+\subsection{Relación con la teoría de autómatas}
+En concreto, podemos asociar a una cadena de Markov un grafo, como veremos más abajo. De esta forma, el grafo resultante se comporta de igual manera que un \textbf{autómata finito}, relacionándose de esta forma las cadenas de Markov con la teoría de autómatas.
+\\\\
+Primero de todo, vamos a definir el grafo de una CMTC ya que resulta fundamental para entender lo siguiente:
+\\\\
+\textbf{Definición: Grafo asociado a una CMTC}
+\\
+$G=(E,U,W)$ es el grafo asociado a una CMTC sii:
 \begin{itemize}
 \item $E$ es el conjunto de estados de la cadena
 \item $U$ es el conjunto de aristas, que en este caso sería el conjunto de transiciones posibles
@@ -72,7 +81,7 @@ $G=(E,U,W)$ es el grafo asociado a una CMTC homogénea sii:
 \end{itemize}
 Además $G$ es un grafo orientado, es decir, que tenemos en cuenta cual es el nodo origen y cual es el nodo destino.
 \\\\
-Una vez presentada la definición de grafo asociado a una CMTC-h, podemos establecer una biyección entre el conjunto de grafos orientados asociados a una CMTC-h y el conjunto de los autómatas finitos deterministas, aunque estos resultados se escapan del alcance del trabajo en cuestión. Simplemente mostraremos un ejemplo de uno de estos grafos:
+Una vez presentada la definición de grafo asociado a una CMTC, podemos establecer una biyección entre el conjunto de grafos orientados asociados a una CMTC y el conjunto de los autómatas finitos deterministas, aunque estos resultados se escapan del alcance del trabajo en cuestión. Simplemente mostraremos un ejemplo de uno de estos grafos:
 \\
 \begin{figure}[h]
   \centering
@@ -81,9 +90,9 @@ Una vez presentada la definición de grafo asociado a una CMTC-h, podemos establ
   \label{fig:ejemplo}
 \end{figure}
 \\
-En el grafo de la izquierda aparecen 3 estados, que corresponden a las variables aleatorias $\mathbb{X}_1$, $\mathbb{X}_2$ y $\mathbb{X}_3$ y representadas como $\lambda_0$, $\lambda_1$, $\mu_1$, $\mu_2$ aparecen las 4 probabilidades de transición. Por último, las flechas indican la dirección en la que se produce la transición.
+En el grafo de la izquierda aparecen 3 estados, que corresponden a las variables aleatorias $\mathbb{X}_{t_1}$, $\mathbb{X}_{t_2}$ y $\mathbb{X}_{t_3}$ y representadas como $\lambda_0$, $\lambda_1$, $\mu_1$, $\mu_2$ aparecen las 4 probabilidades de transición. Por último, las flechas indican la dirección en la que se produce la transición.
 \\\\
-El grafo de la derecha es idéntico pero corresponde a las variables aleatorias $\mathbb{X}_{n-1}$, $\mathbb{X}_n$ y $\mathbb{X}_{n+1}$. Además, según lo visto anteriormente tenemos que el grafo corresponde a la manera usual de representar un autómata finito no determinista.
+El grafo de la derecha es idéntico pero corresponde a las variables aleatorias $\mathbb{X}_{t_{n-1}}$, $\mathbb{X}_{t_n}$ y $\mathbb{X}_{t_{n+1}}$. Además, según lo visto anteriormente tenemos que el grafo corresponde a la manera usual de representar un autómata finito no determinista.
 \section{Probabilidades de transición}
 \section{Ecuación de Kolmogorov}
 \section{Clasificación de los estados}

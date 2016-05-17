@@ -3,7 +3,10 @@
 \contentsline {subsection}{\numberline {1.2}Diferencia entre tiempo discreto y tiempo continuo}{3}
 \contentsline {section}{\numberline {2}Definici\IeC {\'o}n y propiedades}{3}
 \contentsline {subsection}{\numberline {2.1}Definici\IeC {\'o}n}{3}
-\contentsline {subsection}{\numberline {2.2}Relaci\IeC {\'o}n con la teor\IeC {\'\i }a de aut\IeC {\'o}matas}{4}
+\contentsline {subsection}{\numberline {2.2}Propiedades}{4}
+\contentsline {subsubsection}{\numberline {2.2.1}Primera propiedad}{4}
+\contentsline {subsubsection}{\numberline {2.2.2}Segunda propiedad}{4}
+\contentsline {subsection}{\numberline {2.3}Relaci\IeC {\'o}n con la teor\IeC {\'\i }a de aut\IeC {\'o}matas}{4}
 \contentsline {section}{\numberline {3}Probabilidades de transici\IeC {\'o}n}{6}
 \contentsline {section}{\numberline {4}Ecuaci\IeC {\'o}n de Kolmogorov}{6}
 \contentsline {section}{\numberline {5}Clasificaci\IeC {\'o}n de los estados}{6}
