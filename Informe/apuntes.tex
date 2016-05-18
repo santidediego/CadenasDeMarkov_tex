@@ -97,6 +97,17 @@ El grafo de la derecha es idéntico pero corresponde a las variables aleatorias 
 \section{Ecuación de Kolmogorov}
 \section{Clasificación de los estados}
 \section{Teoremas límite}
+A continuación presentamos el Teorema Ergódico.
+\begin{theorem}
+Para una cadena de Markov irreducible se verifica:
+\begin{enumerate}
+\item Si todos los estados son recurrentes positivos:
+$$\lim_{t\rightarrow\infty}p_{i,j}(t)=u_j>0 \, , \, \forall i,j\in S$$
+Además $u=(u_j \, , \, j\in S)$ es la única distribución estacionaria de la cadena y $\displaystyle\lim_{t\rightarrow\infty}a_j (t)=u_j \, , \, \forall j\in S$. La distribución de probabilidad u es la solución del sistema $uQ=0$, siendo $Q$ la $Q$-matriz de la cadena.
+\item Si todos los estados son recurrentes nulos o transitorios,
+$$\lim_{t\rightarrow\infty}p_{ij}(t)=0\, , \, \forall i,j \in S\, ;\,\,\, \lim_{t\rightarrow\infty}a_j (t)=0\, , \, \forall j\in S$$
+\end{enumerate}
+\end{theorem}
 \section{Ejemplos}
 \subsection{Ejemplo 1}
 \subsection{Ejemplo 2}

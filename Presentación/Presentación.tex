@@ -124,7 +124,16 @@ Aquí podemos ver un ejemplo de grafo de una CMTC:
 \section{Teoremas límite}
 \begin{frame}
     \frametitle{Teoremas límite}
-    Esto es una introducción
+    \begin{block}{Teorema Ergódico}
+    Para una cadena de Markov irreducible se verifica:
+	\begin{enumerate}
+    \item Si todos los estados son recurrentes positivos:
+$$\lim_{t\rightarrow\infty}p_{i,j}(t)=u_j>0 \, , \, \forall i,j\in S$$
+Además $u=(u_j \, , \, j\in S)$ es la única distribución estacionaria de la cadena y $\displaystyle\lim_{t\rightarrow\infty}a_j (t)=u_j \, , \, \forall j\in S$. La distribución de probabilidad u es la solución del sistema $uQ=0$, siendo $Q$ la $Q$-matriz de la cadena.
+\item Si todos los estados son recurrentes nulos o transitorios,
+$$\lim_{t\rightarrow\infty}p_{ij}(t)=0\, , \, \forall i,j \in S\, ;\,\,\, \lim_{t\rightarrow\infty}a_j (t)=0\, , \, \forall j\in S$$
+\end{enumerate}
+    \end{block}
 \end{frame}
 
 \section{Ejemplos}
