@@ -11,6 +11,6 @@
 \contentsline {section}{\numberline {4}Ecuaci\IeC {\'o}n de Kolmogorov}{7}
 \contentsline {section}{\numberline {5}Clasificaci\IeC {\'o}n de los estados}{7}
 \contentsline {section}{\numberline {6}Teoremas l\IeC {\'\i }mite}{7}
-\contentsline {section}{\numberline {7}Ejemplos}{7}
-\contentsline {subsection}{\numberline {7.1}Ejemplo 1}{7}
-\contentsline {subsection}{\numberline {7.2}Ejemplo 2}{7}
+\contentsline {section}{\numberline {7}Ejemplos}{8}
+\contentsline {subsection}{\numberline {7.1}Ejemplo 1}{8}
+\contentsline {subsection}{\numberline {7.2}Ejemplo 2}{8}

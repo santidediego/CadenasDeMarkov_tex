@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.24)  19 MAY 2016 12:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.24)  19 MAY 2016 12:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -528,7 +528,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 118--126
 
  []
 
-[6 <./img/afd.png>] [7] (./apuntes.aux)
+[6 <./img/afd.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 139--142
+
+ []
+
+[7] [8] (./apuntes.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -555,10 +560,10 @@ ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texliv
 e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
 2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on apuntes.pdf (7 pages, 206305 bytes).
+Output written on apuntes.pdf (8 pages, 206909 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 92 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
