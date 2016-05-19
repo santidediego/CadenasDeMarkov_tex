@@ -60,6 +60,15 @@ $P(\mathbb{X}_{t_{n+h}}=i_{n+h}, h=1,\ldots m \, | \, \mathbb{X}_{t_k}=i_k, k=0,
 \\
 $\forall 0 \leq t_1< t_2, \ldots , < t_n+m\, , \forall i_k\in S, k=0,\ldots , n+m$
 \begin{proof}
+Vamos a demostrarlo por inducción:
+\\\\
+Primero hacemos el caso $h=1$:
+\\\\
+$P(\mathbb{X}_{t_{n+1}}=i_{n+1},h=1 \, |\, \mathbb{X}_{t_k}=i_k\, k=0,\ldots n)=P(\mathbb{X}_{t_{n+1}}=i_{n+1}\, | \,\mathbb{X}_{t_n}=i_n)$
+\\
+$\forall 0\leq t_1<t_2<\ldots <t_{n+m}\, \forall m\geq 1$ y $\forall i_k \in S, \,k=0,\ldots n+m$
+\\\\
+Lo suponemos cierto para $h$ y lo probamos para $h+1$
 
 \end{proof}
 \subsubsection{Segunda propiedad}
@@ -67,7 +76,7 @@ $\forall 0 \leq t_1< t_2, \ldots , < t_n+m\, , \forall i_k\in S, k=0,\ldots , n+
 
 \end{proof}
 \subsection{Relación con la teoría de autómatas}
-En concreto, podemos asociar a una cadena de Markov un grafo, como veremos más abajo. De esta forma, el grafo resultante se comporta de igual manera que un \textbf{autómata finito}, relacionándose de esta forma las cadenas de Markov con la teoría de autómatas.
+En concreto, podemos asociar a una cadena de Markov un grafo, como veremos más abajo. De esta forma, el grafo resultante se comporta de igual manera que un \textbf{autómata finito determinista}, relacionándose de esta forma las cadenas de Markov con la teoría de autómatas.
 \\\\
 Primero de todo, vamos a definir el grafo de una CMTC ya que resulta fundamental para entender lo siguiente:
 \\\\
@@ -92,7 +101,41 @@ Una vez presentada la definición de grafo asociado a una CMTC, podemos establec
 \\
 En el grafo de la izquierda aparecen 3 estados, que corresponden a las variables aleatorias $\mathbb{X}_{t_1}$, $\mathbb{X}_{t_2}$ y $\mathbb{X}_{t_3}$ y representadas como $\lambda_0$, $\lambda_1$, $\mu_1$, $\mu_2$ aparecen las 4 probabilidades de transición. Por último, las flechas indican la dirección en la que se produce la transición.
 \\\\
-El grafo de la derecha es idéntico pero corresponde a las variables aleatorias $\mathbb{X}_{t_{n-1}}$, $\mathbb{X}_{t_n}$ y $\mathbb{X}_{t_{n+1}}$. Además, según lo visto anteriormente tenemos que el grafo corresponde a la manera usual de representar un autómata finito no determinista.
+El grafo de la derecha es idéntico pero corresponde a las variables aleatorias $\mathbb{X}_{t_{n-1}}$, $\mathbb{X}_{t_n}$ y $\mathbb{X}_{t_{n+1}}$. Además, según lo visto anteriormente tenemos que el grafo corresponde a la manera usual de representar un autómata finito determinista.
+\\\\
+Para concluir presentaremos la definición de autómata finito determinista, por si el lector está interesado en el estudio del mismo:
+\\\\
+\textbf{Definición de autómata finito determinista:}
+\\
+Un AFD es una 5-tupla $(Q,\sum ,q_0,\delta,F)$ donde:
+\begin{itemize}
+\item $Q$ es un conjunto de estados
+\item $\sum$ es un alfabeto
+\item $q_0$ es el estado inicial
+\item $\delta :Q\times\sum\rightarrow Q$ es la función de transición
+\item $F\subseteq Q$ es el conjunto de estados finales
+\end{itemize}
+Además verifica que $\delta (q,a)=q_1$ y $\delta (q,a)=q_2 \Rightarrow q_1 \neq q_2$ y que no existen transiciones de la forma $\delta(q,\epsilon)$ donde $\epsilon$ es la cadena vacía.
+\\\\
+Veamos un ejemplo de un autómata finito determinista muy simple:
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.8\textwidth]{img/afd.png}
+  \label{fig:ejemplo}
+\end{figure}
+
+Observando la definición y aplicándola a este caso concreto podemos diferenciar:
+\begin{itemize}
+\item $Q=\{q_0,q_1,q_2 \}$
+\item $\sum = \{0,1\}$
+\item $q_0=q_0$
+\item Función de transición $\delta \, t.q$:
+\\
+$\delta(q_0,0)=q_0 \,\,\,\,\,\,\, \delta(q_1,0)=q_1\,\,\,\,\,\,\, \delta(q_2,0)=q_2$
+\\
+$\delta(q_0,1)=q_1 \,\,\,\,\,\,\,  \delta(q_1,1)=q_2 \,\,\,\,\,\,\,\delta(q_2,1)=q_0$
+\item $F={q_2}$
+\end{itemize}
 \section{Probabilidades de transición}
 \section{Ecuación de Kolmogorov}
 \section{Clasificación de los estados}

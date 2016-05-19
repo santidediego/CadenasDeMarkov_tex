@@ -6,11 +6,11 @@
 \contentsline {subsection}{\numberline {2.2}Propiedades}{4}
 \contentsline {subsubsection}{\numberline {2.2.1}Primera propiedad}{4}
 \contentsline {subsubsection}{\numberline {2.2.2}Segunda propiedad}{4}
-\contentsline {subsection}{\numberline {2.3}Relaci\IeC {\'o}n con la teor\IeC {\'\i }a de aut\IeC {\'o}matas}{4}
-\contentsline {section}{\numberline {3}Probabilidades de transici\IeC {\'o}n}{6}
-\contentsline {section}{\numberline {4}Ecuaci\IeC {\'o}n de Kolmogorov}{6}
-\contentsline {section}{\numberline {5}Clasificaci\IeC {\'o}n de los estados}{6}
-\contentsline {section}{\numberline {6}Teoremas l\IeC {\'\i }mite}{6}
-\contentsline {section}{\numberline {7}Ejemplos}{6}
-\contentsline {subsection}{\numberline {7.1}Ejemplo 1}{6}
-\contentsline {subsection}{\numberline {7.2}Ejemplo 2}{6}
+\contentsline {subsection}{\numberline {2.3}Relaci\IeC {\'o}n con la teor\IeC {\'\i }a de aut\IeC {\'o}matas}{5}
+\contentsline {section}{\numberline {3}Probabilidades de transici\IeC {\'o}n}{7}
+\contentsline {section}{\numberline {4}Ecuaci\IeC {\'o}n de Kolmogorov}{7}
+\contentsline {section}{\numberline {5}Clasificaci\IeC {\'o}n de los estados}{7}
+\contentsline {section}{\numberline {6}Teoremas l\IeC {\'\i }mite}{7}
+\contentsline {section}{\numberline {7}Ejemplos}{7}
+\contentsline {subsection}{\numberline {7.1}Ejemplo 1}{7}
+\contentsline {subsection}{\numberline {7.2}Ejemplo 2}{7}

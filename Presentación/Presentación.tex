@@ -44,7 +44,6 @@
 $$P(\mathbb{X}_{n+1}=y \, | \, \mathbb{X}_n = x_n , \ldots , \mathbb{X}_0 = x_0)=P(\mathbb{X}_{n+1}=y \, | \, {\mathbb{X}_n=x_n})$$
   		\end{block}
   	\end{frame}
-\subsection{Diferencia con tiempo discreto}
 \begin{frame}
 \frametitle{Diferencia con tiempo discreto}
 La principal diferencia entre cadenas de Markov en tiempo discreto y tiempo continuo es, como dice el propio nombre, el tiempo.
@@ -82,27 +81,6 @@ $\forall 0 \leq t_1< t_2, \ldots , < t_n+m\, , \forall i_k\in S, k=0,\ldots , n+
 $P(\mathbb{X}_{t_{n+h}}=i_{n+h}\, | \, \mathbb{X}_{t_k}=i_k \, ,  k=0,\ldots , n)=P(\mathbb{X}_{t_{n+h}}=i_{n+h}\, | \, \mathbb{X}_{t_n}=i_n)$
 \end{block}
 \end{frame}
-\section{Grafo de una CMTC}
-\begin{frame}{Grafo de una CMTC}
-\begin{block}{Definición de Grafo de una CMTC}
-$G=(E,U,W)$ es el grafo asociado a una CMTC sii:
-\begin{itemize}
-\item $E$ es el conjunto de estados de la cadena
-\item $U$ es el conjunto de transiciones posibles (aristas)
-\item $W$ es el conjunto de ponderaciones. Podemos verlo como el conjunto de valores de cada arista
-\end{itemize}
-Además $G$ es un grafo orientado, es decir, que tenemos en cuenta cual es el nodo origen y cual es el nodo destino.
-\end{block}
-\end{frame}
-\begin{frame}
-Aquí podemos ver un ejemplo de grafo de una CMTC:
-\newline
-\begin{figure}[h]
-  \centering
-    \includegraphics[width=0.9\textwidth]{img/grafo.png}
-  \label{fig:ejemplo}
-\end{figure}
-\end{frame}
 \section{Probabilidades de transición}
 \begin{frame}
     \frametitle{Probabilidades de transición}
@@ -136,6 +114,64 @@ $$\lim_{t\rightarrow\infty}p_{ij}(t)=0\, , \, \forall i,j \in S\, ;\,\,\, \lim_{
     \end{block}
 \end{frame}
 
+\section{Relación con la teoría de autómatas}
+\begin{frame}{Relación con la teoría de autómatas}
+\begin{block}{Definición de Grafo de una CMTC}
+$G=(E,U,W)$ es el grafo asociado a una CMTC sii:
+\begin{itemize}
+\item $E$ es el conjunto de estados de la cadena
+\item $U$ es el conjunto de transiciones posibles (aristas)
+\item $W$ es el conjunto de ponderaciones. Podemos verlo como el conjunto de valores de cada arista
+\end{itemize}
+Además $G$ es un grafo orientado, es decir, que tenemos en cuenta cual es el nodo origen y cual es el nodo destino.
+\end{block}
+\end{frame}
+\begin{frame}
+Aquí podemos ver un ejemplo de grafo de una CMTC:
+\newline
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.9\textwidth]{img/grafo.png}
+  \label{fig:ejemplo}
+\end{figure}
+Una vez vista la definición de grafo de una CMTC vamos a introducir la definición de autómata finito determinista:
+\end{frame}
+\begin{frame}
+\begin{block}{Definición de autómata finito determinista}
+Un AFD es una 5-tupla $(Q,\sum ,q_0,\delta,F)$ donde:
+\begin{itemize}
+\item $Q$ es un conjunto de estados
+\item $\sum$ es un alfabeto
+\item $q_0$ es el estado inicial
+\item $\delta :Q\times\sum\rightarrow Q$ es la función de transición
+\item $F\subseteq Q$ es el conjunto de estados finales
+\end{itemize}
+Además verifica que $\delta (q,a)=q_1$ y $\delta (q,a)=q_2 \Rightarrow q_1 \neq q_2$ y que no existen transiciones de la forma $\delta(q,\epsilon)$ donde $\epsilon$ es la cadena vacía
+\end{block}
+\end{frame}
+\begin{frame}
+Aquí podemos ver un ejemplo de AFD:
+\newline
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.9\textwidth]{img/afd.png}
+  \label{fig:ejemplo}
+\end{figure}
+\end{frame}
+\begin{frame}
+En el ejemplo anterior podemos diferenciar:
+\begin{itemize}
+\item $Q=\{q_0,q_1,q_2 \}$
+\item $\sum = \{0,1\}$
+\item $q_0=q_0$
+\item $\delta \, t.q$:
+\\
+$\delta(q_0,0)=q_0 \,\,\,\,\,\,\, \delta(q_1,0)=q_1\,\,\,\,\,\,\, \delta(q_2,0)=q_2$
+\\
+$\delta(q_0,1)=q_1 \,\,\,\,\,\,\,  \delta(q_1,1)=q_2 \,\,\,\,\,\,\,\delta(q_2,1)=q_0$
+\item $F={q_2}$
+\end{itemize}
+\end{frame}
 \section{Ejemplos}
 \subsection{Ejemplo 1}
 \begin{frame}
