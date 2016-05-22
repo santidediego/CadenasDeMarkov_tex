@@ -68,8 +68,20 @@ $P(\mathbb{X}_{t_{n+1}}=i_{n+1},h=1 \, |\, \mathbb{X}_{t_k}=i_k\, k=0,\ldots n)=
 \\
 $\forall 0\leq t_1<t_2<\ldots <t_{n+m}\, \forall m\geq 1$ y $\forall i_k \in S, \,k=0,\ldots n+m$
 \\\\
-Lo suponemos cierto para $h$ y lo probamos para $h+1$
-
+Lo suponemos cierto para $h$ y lo probamos para $h+1$:
+\\\\
+$P(\mathbb{X}_{t_{n+h}}=i_{n+h},\, h=1,\ldots m \, | \, \mathbb{X}_{t_k}=i_k ,\, k=0,\ldots n)P(\mathbb{X}_{t_k}=i_k,\, k=0\ldots n)$
+\\
+$=P(\mathbb{X}_{t_k}=i_k\, k=0,\ldots ,n+m+1)=P(\mathbb{X}_{t_{n+m-1}}=i_{n+m-1}\, | \, \mathbb{X}_{t_k}=i_k,\, k=0,\ldots , n+m)=P(\mathbb{X}_{t_k}=i_k,\, k=0,\ldots n+m)=P(\mathbb{X}_{t_{n+m+1}}=i_{n+m+1}\, | \, \mathbb{X}_{t_k}=i_k,\, k=0,\ldots ,n+m)=P(\mathbb{X}_{t_{n+h}}=i_{n+h},\, h=1,\ldots m \, | \, \mathbb{X}_{t_k}=i_k ,\, k=0,\ldots n)P(\mathbb{X}_{t_k}=i_k,\, k=0\ldots n)$
+\\
+$=P(\mathbb{X}_{t_{n+m+1}}=i_{n+m+1}\, | \, \mathbb{X}_{t_k}=i_k,\, k=0,\ldots ,n+m)P(\mathbb{X}_{t_{n+h}}=i_{n+h},\, h=2,\ldots m \, | \, \mathbb{X}_{t_k}=i_k ,\, k=0,\ldots n)P(\mathbb{X}_{t_k}=i_k,\, k=0\ldots n)$
+\\\\
+Obtenemos que:
+\\\\
+$P(\mathbb{X}_{t_{n+h}}=i_{n+h},\, h=1,\ldots m+1 \, | \, \mathbb{X}_{t_k}=i_k ,\, k=0,\ldots n)=P(\mathbb{X}_{t_{n+m+1}}=i_{n+m+1})P(\mathbb{X}_{t_{n+h}}=i_{n+h},\, h=1,\ldots m\, | \, \mathbb{X}_{t_n}=i_n)$
+\\\\
+Sin más que aplicar la definición tenemos que lo anterior es igual a $P(\mathbb{X}_{t_{n+m+1}}\, | \, \mathbb{X}_{t_n}=i_{t_n})$
+\qed
 \end{proof}
 \subsubsection{Segunda propiedad}
 \begin{proof}
@@ -141,6 +153,116 @@ De esta forma, queda clara la correspondencia entre AFD y CMTC, sin más que com
 Podemos ver las correspondencias: $Q=E\, ,\, \sum=W$ y $| \delta |=U$ y ademas el conjunto de estados finales es el vacío, es decir, $F={\emptyset}$. 
 
 \section{Probabilidades de transición}
+
+Comenzamos definiendo las llamadas probabilidades de transición. Posteriormente, a partir de estas probabilidades, y restringiéndonos únicamente al caso en que la CMTC sea homogénea, construiremos la matriz de transición $P(t)$ y demostraremos sus propiedades más importantes.
+
+Por último, partiendo de $P(t)$, generaremos y estudiaremos una nueva matriz, denominada $Q$-matriz o generador infinitesimal.
+
+\subsection{Probabilidades de transición y matriz de transición}
+\textbf{Definición: Probabilidades de transición}
+\\
+Dada una CMTC $\{\mathbb{X}_t \, , \, t\in [0,\infty]\}$, definimos las probabilidades de transición como:
+$$p_{ij}(s,t):=P(\mathbb{X}_t=j\, | \, \mathbb{X}_s=i), \ 0\leq s < t, \ \ i,j\in S$$
+
+A partir de este momento, supondremos que la CMTC es homogénea. Teniendo en cuenta la expresión anterior y siguiendo la definición de Cadena de Markov homogénea en tiempo continuo, citada en la sección (2.1), tenemos que la probabilidad de ir del estado $i$ al estado $j$ no depende del instante de tiempo en el que se encuentra la cadena, es decir, $p_{ij}(s,t)$ no depende de $s$ y $t$, sólo depende de la diferencia $t-s$:
+$$p_{ij}(s,t)=P(\mathbb{X}_t=j\, | \, \mathbb{X}_s=i)=P(\mathbb{X}_{t-s}=j\, | \, \mathbb{X}_0=i)=p_{ij}(0,t-s)=p_{ij}(t-s)$$
+Por tanto, podemos expresar las probabilidades de transición como:
+$$p_{ij}(t)=P(\mathbb{X}_t=j\, | \, \mathbb{X}_0=i)=P(\mathbb{X}_{t+s}=j\, | \, \mathbb{X}_s=i)$$
+siendo $t$ la diferencia entre los dos instantes de tiempo. En particular:
+$$p_{ij}(0)=P(\mathbb{X}_0=j\, | \, \mathbb{X}_0=i)=\delta_{ij}:= \left\{ \begin{array}{lcc}
+   	   	             1 &   si  & i=j \\
+   	   	             0 &  si & i\neq j
+   	   	             \end{array} \right. $$
+Estamos en condiciones de construir la matriz de transición, cuyos elementos son todas las posibles probabilidades de transición:
+$$P(t):=(p_{ij}(t))_{i,j\in S}$$
+\textbf{Propiedades:}
+\begin{enumerate}
+\item Para cada $t\geq 0, \ \ p_{ij}(t)\geq 0, \ \ \forall i,j\in S$,
+\item Para cada $t\geq 0, \ \ \sum\limits_{j\in S}p_{ij}(t)=1, \ \ \forall i\in S$,
+\item Ecuación de \textit{Chapman-Kolmogorov}: 
+$p_{ij}(s+t)=\sum\limits_{k\in S}p_{ik}(s)p_{kj}(t), \ \ \forall i,j\in S, \ \ \forall s,t\in[0,\infty)$.
+\end{enumerate}
+
+\begin{proof}
+\begin{enumerate}
+\item Evidente, pues $P$ es probabilidad.
+\item Partiendo del hecho de que $P[\Omega]=P\left[\{\omega\in\Omega/\mathbb{X}_t(\omega)\in S\}\right]=P\left[\bigcup\limits_{j\in S}\{\omega\in\Omega/\mathbb{X}_t(\omega)=j\}\right]=P\left[\bigcup\limits_{j\in S}[\mathbb{X}_t=j]\right]=1$, tenemos:
+\\\\\\
+$1=P\left[\bigcup\limits_{j\in S}[\mathbb{X}_t=j]\, | \,\mathbb{X}_0=i\right]\overset{*}{=}\sum\limits_{j\in S}P\left[\mathbb{X}_t=j\, | \,\mathbb{X}_0=i\right]-\underbrace{P\left[\bigcap\limits_{j\in S}[\mathbb{X}_t=j]\, | \,\mathbb{X}_0=i \right]}_{0}=\sum\limits_{j\in S}P\left[\mathbb{X}_t=j\, | \,\mathbb{X}_0=i\right]=\sum\limits_{j\in S}p_{ij}(t)$.
+\\\\
+
+(*) $P(A_1\cup A_2\cup ... \cup A_n\, |\, B)=P(A_1\, |\,B)+P(A_2\, |\,B)+...+P(A_n\, |\,B)-P(A_1\cap A_2\cap ... \cap A_n\, |\, B)$.
+\item $p_{ij}(s+t)=P\left[\mathbb{X}_{s+t}=j\, | \,\mathbb{X}_0=i\right]=P\left[\mathbb{X}_{s+t}=j, \bigcup\limits_{k\in S}[\mathbb{X}_s=k]\, | \,\mathbb{X}_0=i\right]=$
+
+$=\sum\limits_{k\in S}P\left[\mathbb{X}_{s+t}=j,\,\mathbb{X}_s=k\, | \,\mathbb{X}_0=i\right]\overset{**}{=}$
+
+$=\dfrac{P[\mathbb{X}_{s+t}=j,\,\mathbb{X}_s=k,\,\mathbb{X}_0=i]}{P[\mathbb{X}_0=i]}\overset{**}{=}$
+
+$=\sum\limits_{k\in S}P\left[\mathbb{X}_{s+t}=j\, | \,\mathbb{X}_s=k, \mathbb{X}_0=i\right]P\left[\mathbb{X}_s=k\, | \,\mathbb{X}_0=i\right]\overset{CMTC}{=}$
+
+$=\sum\limits_{k\in S}P\left[\mathbb{X}_{s+t}=j\, | \,\mathbb{X}_s=k\right]P\left[\mathbb{X}_s=k\, | \,\mathbb{X}_0=i\right]\overset{\text{Homogénea}}{=}$
+
+$=\sum\limits_{k\in S}P\left[\mathbb{X}_t=j\, | \,\mathbb{X}_0=k\right]P\left[\mathbb{X}_s=k\, | \,\mathbb{X}_0=i\right]=\sum\limits_{k\in S}p_{kj}(t)p_{ik}(s)$.
+\\\\
+
+(**) $P(A\cap B\, | \, C)=\dfrac{P(A\cap B\cap C)}{P(C)}=P(A\, | \, B\cap C)P(B\, | \,C)$ \\
+\end{enumerate}
+\qed
+\end{proof}
+
+\subsection{Q-matriz o generador infinitesimal}
+
+
+\textbf{Definición: Q-matriz o generador infinitesimal}
+\\
+Dada una CMTC $\{\mathbb{X}_t \, , \, t\in [0,\infty]\}$, con matriz de transición $P(t)$. Se define la $Q$-matriz o generador infinitesimal como:
+$$Q:=\lim_{t \to 0}\dfrac{P(t)-I}{t},$$
+donde $I$ es la matriz identidad del tamaño correspondiente y, por tanto, los elementos de la diagonal principal se expresan como:
+$$q_{ii}=\lim_{t \to 0}\dfrac{p_{ii}(t)-1}{t}:=-q_i,$$
+donde $q_i$ es la \textit{razón de escape} del estado $i$, mientras que el resto de elementos:
+$$q_{ij}=\lim_{t \to 0}\dfrac{p_{ij}(t)}{t},\,\,\, i\neq j$$
+donde $q_{ij}$ es llamado \textit{razón de transición} del estado $i$ al $j$.
+\\\\
+En lo que resta de sección, procederemos a construir esta matriz a partir de la definición de una nueva variable aleatoria. A partir de este momento, asumimos que la CMTC $\{\mathbb{X}_t \, , \, t\in [0,\infty]\}$ es continua por la derecha, es decir, si la transición de un estado $i\in S$ a un estado $j\in S$ ocurre el instante $t$, entonces se tiene que $\mathbb{X}_t=j$ y $\mathbb{X}_{t^-}=i$.
+
+La cuestión es: ¿Dado $\mathbb{X}_0=i$, cuánto tiempo permanecerá el proceso en el estado $i$? Para responder a esta pregunta, definimos la siguiente variable aleatoria:
+$$T_i\equiv \text{Tiempo que el proceso permanece en el estado} \,\, i.$$
+
+Vamos a deducir la distribución que sigue $T_i$. Para ello será suficiente con probar que la variable $T_i$ verifica la propiedad de falta de memoria, en efecto, dados $t,s\geq 0$:
+\\
+$$P[T_i>s+t\, | \,T_i>s]=$$ 
+$$=P[\mathbb{X}_r=i,\, para \, r\in[0,s+t]\, | \,\mathbb{X}_r=i,\, para \, r\in[0,s]]=$$
+$$=P[\mathbb{X}_r=i,\, para \, r\in[s,s+t]\, | \,\mathbb{X}_r=i,\, para \, r\in[0,s]]\overset{CMTC}{=}$$
+$$=P[\mathbb{X}_r=i,\, para \, r\in[s,s+t]\, | \,\mathbb{X}_s=i]\overset{\textit{Homogénea}}{=}$$
+$$=P[\mathbb{X}_r=i,\, para \, r\in[0,t]\, | \,\mathbb{X}_0=i]=$$
+$$=P[T_i>t].$$
+
+Puesto que $T_i$ es una variable continua verificando la propiedad de falta de memoria, tenemos que $T_i\rightsquigarrow exp(\lambda_i)$, con $\lambda_i>0$, puesto que las únicas variables continuas que verifican esta propiedad son aquellas que siguen una distribución exponencial. Conocida la distribución de $T_i$, deducimos:
+$$\mathbb{E}[T_i]=\dfrac{1}{\lambda_i},$$
+y, por tanto, cuánto más grande sea el parámetro $\lambda_i$, más pequeño será el intervalo de tiempo en el que el proceso se encuentra en el estado $i$.
+\\\\
+Estamos preparados para construir la $Q$-matriz, $Q=(q_{ij})_{i,j\in S}$. Sea:
+$$p_{ij}(T_i)=P(\mathbb{X}_{T_i}=j\, | \, \mathbb{X}_0=i), \,\, j\neq i$$
+la probabilidad de transición del estado $i$ al estado $j$, definimos:
+$$q_{ij}:=\lambda_i p_{ij}(T_i),\,\, i\neq j$$
+la \textit{razón de transición} del estado $i$ al $j$. Para obtener los elementos de la diagonal, es decir, para el caso en que $i=j$, imponemos que la suma de los elementos de cada una de las filas de $Q$ sea $0$:
+$$q_{ii}+\sum_{j\neq i}q_{ij}=0$$
+$$q_{ii}=-\sum_{j\neq i}q_{ij}$$
+$$q_{ii}=-\sum_{j\neq i}\lambda_i p_{ij}(T_i)$$
+$$q_{ii}=-\lambda_i\underbrace{\sum_{j\neq i}p_{ij}(T_i)}_{1}$$
+$$q_{ii}=-\lambda_i:=-q_i$$
+y hemos obtenido $q_i$, la \textit{razón de escape} del estado $i$. Por tanto, la $Q$-matriz se puede expresar de la siguiente manera:
+
+$$Q= \left\{ \begin{array}{lcc}
+   	   	             -\sum\limits_{j\neq i}q_{ij} &   si  & i=j \\
+   	   	             q_{ij} &  si & i\neq j
+   	   	             \end{array} \right. $$
+o equivalentemente:
+$$Q= \left\{ \begin{array}{lcc}
+   	   	             -\lambda_i &   si  & i=j \\
+   	   	             \lambda_i p_{ij}(T_i) &  si & i\neq j
+   	   	             \end{array} \right. $$
+
 \section{Ecuación de Kolmogorov}
 \section{Clasificación de los estados}
 \section{Teoremas límite}

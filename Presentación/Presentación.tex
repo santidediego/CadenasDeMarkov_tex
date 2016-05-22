@@ -84,9 +84,44 @@ $P(\mathbb{X}_{t_{n+h}}=i_{n+h}\, | \, \mathbb{X}_{t_k}=i_k \, ,  k=0,\ldots , n
 \section{Probabilidades de transición}
 \begin{frame}
     \frametitle{Probabilidades de transición}
-    Esto es una introducción
+    \begin{block}{Definición de Probabilidades de transición}
+    Dada una CMTC $\{\mathbb{X}_t \, , \, t\in [0,\infty]\}$, definimos las probabilidades de transición como:
+$$p_{ij}(s,t):=P(\mathbb{X}_t=j\, | \, \mathbb{X}_s=i), \ 0\leq s < t, \ \ i,j\in S$$
+    \end{block}
+    A partir de aquí supondremos que la CMTC es homogénea.
+    \newline	\newline
+     La probabilidad de ir del estado $i$ al estado $j$ no depende del instante de tiempo en el que se encuentra la cadena, es decir, $p_{ij}(s,t)$ no depende de $s$ y $t$, sólo depende de la diferencia $t-s$. Esto nos da pie a enunciar la siguiente propiedad:
+  \end{frame}
+  \begin{frame}
+  \begin{block}{Propiedad}
+  Podemos expresar las probabilidades de transición como:
+ $p_{ij}(t)=P(\mathbb{X}_t=j\, | \, \mathbb{X}_0=i)=P(\mathbb{X}_{t+s}=j\, | \, \mathbb{X}_s=i)$
+  \end{block}
+  Además en la siguiente diapositiva presentamos otras tres propiedades muy importantes:
+   \end{frame} 
+   \begin{frame}
+    \begin{block}{Propiedades}
+\begin{enumerate}
+\item Para cada $t\geq 0, \ \ p_{ij}(t)\geq 0, \ \ \forall i,j\in S$,
+\item Para cada $t\geq 0, \ \ \sum\limits_{j\in S}p_{ij}(t)=1, \ \ \forall i\in S$,
+\item Ecuación de \textit{Chapman-Kolmogorov}: 
+$p_{ij}(s+t)=\sum\limits_{k\in S}p_{ik}(s)p_{kj}(t), \ \ \forall i,j\in S, \ \ \forall s,t\in[0,\infty)$.
+\end{enumerate}
+  \end{block} 
+  \end{frame}
+\subsection{Q-matriz}
+\begin{frame}{Q-matriz}
+\begin{block}{Definición de Q-matriz}
+Dada una CMTC $\{\mathbb{X}_t \, , \, t\in [0,\infty]\}$, con matriz de transición $P(t)$. Se define la $Q$-matriz o generador infinitesimal como:
+$$Q:=\lim_{t \to 0}\dfrac{P(t)-I}{t},$$
+\end{block}
+donde:
+\begin{itemize}
+\item $I$ es la matriz identidad del tamaño correspondiente
+\item  $q_i$ es la \textit{razón de escape} del estado $i$
+\item $q_{ij}$ es llamado \textit{razón de transición} del estado $i$ al $j$.
+\end{itemize}
 \end{frame}
-
 \section{Ecuación de Kolmogorov}
 \begin{frame}
     \frametitle{Ecuación de Kolmogorov}
