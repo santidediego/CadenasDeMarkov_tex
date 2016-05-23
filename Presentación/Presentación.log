@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.24)  22 MAY 2016 12:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.24)  23 MAY 2016 11:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1301,7 +1301,7 @@ LaTeX Info: Redefining \% on input line 2.
 ) [20
 
 ]
-Overfull \vbox (9.50313pt too high) detected at line 150
+Overfull \vbox (9.50313pt too high) detected at line 161
  []
 
 [21
@@ -1317,7 +1317,7 @@ LaTeX Info: Redefining \% on input line 2.
 <img/grafo.png, id=979, 646.415pt x 113.42375pt>
 File: img/grafo.png Graphic file (type png)
  <use img/grafo.png>
-Package pdftex.def Info: img/grafo.png used on input line 173.
+Package pdftex.def Info: img/grafo.png used on input line 184.
 (pdftex.def)             Requested size: 308.06367pt x 54.05508pt.
  [24
 
@@ -1326,15 +1326,15 @@ Package pdftex.def Info: img/grafo.png used on input line 173.
 ] <img/afd.png, id=1053, 803.0pt x 602.25pt>
 File: img/afd.png Graphic file (type png)
  <use img/afd.png>
-Package pdftex.def Info: img/afd.png used on input line 195.
+Package pdftex.def Info: img/afd.png used on input line 206.
 (pdftex.def)             Requested size: 308.06367pt x 231.05368pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig:ejemplo})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.195 \end{frame}
+l.206 \end{frame}
                  
-Overfull \vbox (70.4401pt too high) detected at line 195
+Overfull \vbox (70.4401pt too high) detected at line 206
  []
 
 [26
@@ -1368,14 +1368,14 @@ LaTeX Info: Redefining \% on input line 2.
 \tf@snm=\write8
 \openout8 = `Presentación.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 225.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 225.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 236.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 236.
  (./Presentación.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 225.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 225.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 236.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 236.
 Package rerunfilecheck Info: File `Presentación.out' has not changed.
 (rerunfilecheck)             Checksum: 0782F5264A29C57F456D1D069F197DCA;597.
 
@@ -1386,7 +1386,7 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 225.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 236.
  ) 
 Here is how much of TeX's memory you used:
  18054 strings out of 493089
@@ -1407,7 +1407,7 @@ local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/l
 ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
 cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loca
 l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Presentación.pdf (32 pages, 249682 bytes).
+Output written on Presentación.pdf (32 pages, 252180 bytes).
 PDF statistics:
  1374 PDF objects out of 1440 (max. 8388607)
  1291 compressed objects within 13 object streams

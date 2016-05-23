@@ -17,6 +17,8 @@
 \newtheorem{theorem}{Teorema}[section]
 \newtheorem{lemma}{Lema}[section]
 \newtheorem{proof}{Demostración}[section]
+\newtheorem{prop}{Proposición}[section]
+\newtheorem{definition}{Definición}[section]
 \newpage
 \tableofcontents
 \newpage
@@ -35,23 +37,20 @@ La principal diferencia entre cadenas de Markov en tiempo discreto y tiempo cont
 \section{Definición y propiedades}
 \subsection{Definición}
 Primero de todo, definiremos una Cadena de Markov como:
-\\\\
-\textbf{Definición: Cadena de Markov}
-\\
+\begin{definition}{\textbf{Cadena de Markov en tiempo continuo}}\\
 Sea $\{\mathbb{X}_t\}_{t\geq 0}$ un proceso estocástico en tiempo continuo, esto es, $t\in [0,T]$ con $T\in \mathbb{R}$ que toma valores en un conjunto numerable $E$. Decimos que $\{\mathbb{X}_t\}_{t\geq 0}$ es una Cadena de Markov en tiempo continuo si $\forall t,s\geq 0$ y $\forall i,j,x_u\in E$ con $0\geq u \geq s$, se cumple que:
 $$P(\mathbb{X}_{t+s}=j \, | \, \mathbb{X}_s =i \, , \,  \mathbb{X}_u =  u \,\, \forall 0\leq u\leq s)=P(\mathbb{X}_{t+s}=j \, | \, \mathbb{X}_s = i)$$
+\end{definition}
 Es decir, podemos definir una Cadena de Markov como un proceso estocástico	en el que el futuro sólo depende del presente, independientemente de sus estados pasados. Además también podemos considerar la definición alternativa:
-\\\\
-\textbf{Definición 2: Cadena de Markov}
-\\
+\begin{definition}{\textbf{Cadena de Markov en tiempo continuo}}\\
 El proceso estocástico $\{\mathbb{X}_t \, , \, t\in [0,\infty]\}$ es una Cadena de Markov en tiempo continuo si para cualquier entero $n\geq 0$, cualesquiera $0\leq t_0 < t_1 < \ldots < t_{n+1}$ y $i_0,\ldots , i_n,i_{n+1}\in S$ se verifica:
-$$P(\mathbb{X}_{t_{n+1}}=i_{n+1}\, | \, \mathbb{X}_{t_0}=i_0 , \ldots \mathbb{X}_{t_n}=i_n)=P(\mathbb{X}_{t_{n+1}}=i_{n+1}\, | \, \mathbb{X}_{t_n}=i_n)$$\\
+$$P(\mathbb{X}_{t_{n+1}}=i_{n+1}\, | \, \mathbb{X}_{t_0}=i_0 , \ldots \mathbb{X}_{t_n}=i_n)=P(\mathbb{X}_{t_{n+1}}=i_{n+1}\, | \, \mathbb{X}_{t_n}=i_n)$$
+\end{definition}
 Además, introducimos también el concepto de Cadena de Markov en tiempo continuo homogénea:
-\\\\
-\textbf{Definición: Cadena de Markov homogénea en tiempo continuo}
-\\
+\begin{definition}{\textbf{Cadena de Markov homogénea en tiempo continuo}}\\
 Una CMTC se dice homogénea si la probabilidad de ir del estado $i$ al estado $j$ no depende del instante de tiempo en el que se encuentra la cadena, formalmente esto es:
 $$P(\mathbb{X}_n=j \, | \, \mathbb{X}_{n-1}=i)=P(\mathbb{X}_1=j \, | \, \mathbb{X}_0=i)$$
+\end{definition}
 Una vez vistas estas definiciones podemos ver las propiedades de una Cadena de Markov.
 \subsection{Propiedades}
 Podemos notar dos propiedades fundamentales en cuanto a CMTC, que son:
@@ -84,8 +83,23 @@ Sin más que aplicar la definición tenemos que lo anterior es igual a $P(\mathb
 \qed
 \end{proof}
 \subsubsection{Segunda propiedad}
+Sea $\mathbb{X}_{t}$ con $t\in[o,+\infty)$ una cadena de Markov en tiempo continuo, se tiene: \newline
+		\begin{equation*}
+			P(\mathbb{X}_{t_{n+h}} = i_{t_{n+h}} \, |\, \mathbb{X}_{t_{k}} = i_{k} \hspace{0.2cm} k = 0,...,n) = P(\mathbb{X}_{t_{n+h}} = i_{t_{n+h}} \, |\, \mathbb{X}_{t_{n}} = i_{n}) \hspace{0.5cm} \forall h \geq 1
+		\end{equation*}
 \begin{proof}
-
+		Lo haremos por inducción sobre el número de instantes de tiempo, tal y como en la primera propiedad.
+		\\[0.2cm]
+		Demostrémoslo para $h = 1$
+		\\[0.2cm]
+		$P(\mathbb{X}_{t_{n+1}} = i_{t_{n+1}} \, |\, \mathbb{X}_{t_{k}} = i_{k} \hspace{0.2cm} k = 0,...,n)\overbrace{=}^{*}P(\mathbb{X}_{t_{n+h}} = i_{t_{n+h}} \, |\, \mathbb{X}_{t_{n}} = i_{n})$
+		\\[0.2cm]
+		Supongámoslo demostrado para $h - 1$ y demostrémoslo para $h$.
+		\\[0.2cm]
+		$P(\mathbb{X}_{t_{n+h}} = i_{t_{n+h}} \, |\, \mathbb{X}_{t_{k}} = i_{k} \hspace{0.2cm} k = 0,...,n) = P(\mathbb{X}_{t_{n+h}} = i_{t_{n+h}} , \bigcup_{i_{n+h-1} \in E} \mathbb{X}_{t_{n+h-1}} = i_{n+h-1} ,\ldots, \bigcup_{i_{n+1} \in E} \mathbb{X}_{t_{n+1}} = i_{n+1} \, |\, \mathbb{X}_{t_{k}} = i_{k} \hspace{0.2cm} k = 0,...,n) = \sum_{i_{n+h-1} \in E} \sum_{i_{n+1} \in E} P(\mathbb{X}_{t_{n+h}} = i_{t_{n+h}} , \mathbb{X}_{t_{n+h-1}} = i_{n+h-1} ,..., \mathbb{X}_{t_{n+1}} = i_{n+1} \, |\, \mathbb{X}_{t_{k}} = i_{k} \hspace{0.2cm} k = 0,...,n) \overbrace{=}^{*}\sum_{i_{n+h-1} \in E} \sum_{i_{n+1} \in E} P(\mathbb{X}_{t_{n+h}} = i_{t_{n+h}} , \mathbb{X}_{t_{n+h-1}} = i_{n+h-1} ,\ldots, \mathbb{X}_{t_{n+1}} = i_{n+1} \, |\, \mathbb{X}_{t_{n}} = i_{n}) = P(\mathbb{X}_{t_{n+h}} = i_{t_{n+h}} , \bigcup_{i_{n+h-1} \in E} \mathbb{X}_{t_{n+h-1}} = i_{n+h-1} ,..., \bigcup_{i_{n+1} \in E} \mathbb{X}_{t_{n+1}} = i_{n+1} \, |\, \mathbb{X}_{t_{n}} = i_{n}) = P(\mathbb{X}_{t_{n+h}} = i_{t_{n+h}} \, |\, \mathbb{X}_{t_{n}} = i_{n})$
+		\\[0.2cm]
+		Nota: "$*$" significa "por definición de cadena de Markov".
+		\qed
 \end{proof}
 \subsection{Relación con la teoría de autómatas}
 En concreto, podemos asociar a una cadena de Markov un grafo, como veremos más abajo. De esta forma, el grafo resultante se comporta de igual manera que un \textbf{autómata finito determinista}, relacionándose de esta forma las cadenas de Markov con la teoría de autómatas.
@@ -107,7 +121,7 @@ Una vez presentada la definición de grafo asociado a una CMTC, podemos establec
 \begin{figure}[h]
   \centering
     \includegraphics[width=0.7\textwidth]{img/grafo.png}
-  \caption{Ejemplo de grafo de una CMTC-h}
+  \caption{Ejemplo de grafo de una CMTC}
   \label{fig:ejemplo}
 \end{figure}
 \\
@@ -264,10 +278,257 @@ $$Q= \left\{ \begin{array}{lcc}
    	   	             \end{array} \right. $$
 
 \section{Ecuación de Kolmogorov}
+	Ya que una cadena de Markov está determinada por las probabilidades de transición, que ya hemos definido, vamos a calcularlas a partir de la razón de transición. Vamos a formalizarlo con el siguiente teorema.
+	\begin{theorem}[Teorema de las Ecuaciones Diferenciales de Kolmogorov] Sea $\mathbb{X}_{t}$ con $t \in [0,\infty)$ es una cadena de Markov que no tiene nigún estado instantáneo. Entonces las probabilidades de transición son diferenciables en $t$ y $\forall i,j$, par de estados, se tiene:
+		\begin{equation*}
+			P'(t) = P(t)Q\hspace{0.1cm}y\hspace{0.1cm}P(0) = I \iff \frac{dp_{ij}(t)}{dt} = -p_{ij}q_{j} + \sum_{k \neq j} p_{ik}(t)q_{kj} \hspace{0.5cm} p_{ij}(0) = \delta_{ij} \hspace{0.5cm}
+		\end{equation*}
+		(Ecuación adelantada)
+		\begin{equation*}
+			P'(t) = QP(t)\hspace{0.1cm}y\hspace{0.1cm}P(0) = I \iff \frac{dp_{ij}(t)}{dt} = -q_{i}p_{ij} + \sum_{k \neq j} q_{ik}p_{kj}(t) \hspace{0.5cm} p_{ij}(0) = \delta_{ij} \hspace{0.5cm}
+		\end{equation*}
+		(Ecuación atrasada)
+	\end{theorem}
+	\begin{proof}
+		En esta demostración vamos a partir de la definición de derivada de $p_{ij}(t)$ hasta llegar al resultado final aplicando la Ecuación de Chapman-Kolmogorov y las razones de transición del apartado anterior.
+		\\[0.2cm]
+		Conocemos la ecuación de Chapman-Kolmogorov:
+		\begin{equation*}
+			p_{ij}(t+h) = \sum_{k \in S}p_{ik}(h)p_{kj}(t) = 
+			\begin{cases}
+				\sum_{k \neq j}p_{ik}(t)p_{kj}(h) + p_{jj}(h)p_{ij}(t) \hspace{0.5cm} (1)
+				\\
+				\sum_{k \neq i}p_{ik}(h)p_{kj}(t) + p_{ii}(h)p_{ij}(t) \hspace{0.5cm} (2)
+			\end{cases}
+		\end{equation*}
+		Lo que hemos hecho, básicamente, es expresar la ecuación de Chapman-Kolmogorov de dos formas distintas que nos servirán para llegar a las ecuaciones adelantadas y atrasadas.
+		\\[0.2cm]
+		Veamos ahora que las ecuaciones de Kolmogorov se cumplen:
+		\begin{equation*}
+			p'_{ij}(t) = \lim_{h \rightarrow 0} \frac{p_{ij}(t+h) - p_{ij}(t)}{h} = \lim_{h \rightarrow 0} \frac{\sum_{k \in S}p_{ik}(h)p_{kj}(t) - p_{ij}(t)}{h}
+		\end{equation*}
+		Si ahora aplicamos (1):
+		\begin{equation*}
+			\lim_{h \rightarrow 0} \sum_{k \neq j}\frac{p_{ik}(t)p_{kj}(h)}{h} - \lim_{h \rightarrow 0}\frac{p_{jj}(h) - 1}{h}p_{ij}(t) \overbrace{=}^{*} -p_{ij}q_{j} + \sum_{k \neq j} p_{ik}(t)q_{kj}\hspace{0.5cm} \text{(Ecuación adelantada)}
+		\end{equation*}
+		Si en cambio aplicamos (2):
+		\begin{equation*}
+			\lim_{h \rightarrow 0} \sum_{k \neq i}\frac{p_{ik}(h)p_{kj}(t)}{h} - \lim_{h \rightarrow 0}\frac{p_{ii}(h) - 1}{h}p_{ij}(t) \overbrace{=}^{*} -q_{i}p_{ij} + \sum_{k \neq j} q_{ik}p_{kj}(t)\hspace{0.5cm} \text{(Ecuación atrasada)}
+		\end{equation*}
+		O en notación matricial:
+		\begin{equation*}
+			\begin{cases}
+				P'(t) = P(t)Q\hspace{0.1cm}:\hspace{0.1cm}P(0) = I\hspace{0.5cm} \text{(Ecuación adelantada)} \\
+				P'(t) = QP(t)\hspace{0.1cm}:\hspace{0.1cm}P(0) = I\hspace{0.5cm} \text{(Ecuación atrasada)}
+			\end{cases}
+		\end{equation*}
+		Nota: "$*$" significa que hemos aplicados las razones de transición dadas en el apartado anterior.
+	\end{proof}
+	Formalmente vemos que la solución a las ecuaciones de Kolmogorov viene dada por:
+	\begin{equation*}
+		P(t) = e^{t Q} = \sum_{i = 0}^{\infty}\frac{t^{i} Q^{i}}{i!}
+	\end{equation*} 
+	Cuando Q es de dimensión finita, la serie anterior es convergente y es la única solución para los dos sistemas de ecuaciones. Si Q es de dimensión infinita, no podemos afirmar nada.
+	\\[0.2cm]
+	Supongamos que Q es de dimensión finita y diagonalizable con valores propios $\beta_0 ,..., \beta_n$. Entonces $\exists A$ matriz invertible que verifica $Q = ADA^{-1}$ donde $D$ es la matriz diagonal formada por sus valores propios ordenados. Y como consecuencia:
+	\begin{equation*}
+		Q = A \begin{pmatrix}
+			\beta_0 \hspace{2cm} 0 \\
+			......................\\
+			......................\\
+			......................\\
+			0 \hspace{2cm} \beta_n
+		\end{pmatrix} A^{-1}
+	\Rightarrow
+		P(t) = A \begin{pmatrix}
+			e^{\beta_0 t} \hspace{2cm} 0 \\
+			......................\\
+			......................\\
+			......................\\
+			0 \hspace{2cm} e^{\beta_n t}
+		\end{pmatrix} A^{-1}
+	\end{equation*}
+		\section{Probabilidades absolutas y distribución estacionaria}
+	
+\begin{itemize}
+	\item Sea $\mathbb{X}_{t}$ con $t\in[0,+\infty)$ una cadena de Markov en tiempo continuo,
+	definiremos las probabilidades absolutas como:
+	\end{itemize}
+\begin{equation*}	
+	a_{j}=P[\mathbb{X}_{t}=j] \hspace{0.5cm}  con \hspace{0.2cm} j\in{S}, \hspace{0.2cm}  t\in[0,+\infty)
+ \end{equation*}
+
+	
+	\begin{itemize}
+\item Sean $a(t)$ las distribuciones absolutas de $\mathbb{X}_{t}$ entonces: 
+
+\end{itemize}
+\begin{equation*}
+  a(t)=(a_{j}; j\in{S}),\hspace{0.2cm} que \hspace{0.2cm} en \hspace{0.2cm}forma\hspace{0.2cm} matricial\hspace{0.2cm} viene \hspace{0.2cm} dado\hspace{0.2cm} por \hspace{0.2cm} a(t)=a(0)P(t)
+\end{equation*}
+
+\begin{itemize}
+	 \item	Una cadena de Markov con probabilidades de transición estacionarias se denomina estacionaria si las distribuciones absolutas
+	 	$a(t)$ son independientes de t. En dicho caso, la distribución estacionaria $a$=$(a_{j}$; $j\in{S})$, verifica que:
+\end{itemize}
+\begin{equation*}
+a_{j}=a_{1}(0)p_{1j}(t)+a_{2}(0)p_{2j}(t)+\cdots=\sum_{i\in{S}} a_{i}(0)p_{ij}(t)
+\end{equation*}
+
 \section{Clasificación de los estados}
+	Sea $\mathbb{X}_{t}$ con $t\in[0,+\infty)$,  cadena de Markov en tiempo continuo con probabilidades de transición estacionarias y sea $E_{i}$ un estado del espacio de estados.
+	\\
+		A continuación clasificaremos los estados de una cadena de Markov según:
+	
+	\begin{enumerate}
+		\item $\xi_{i}$: tiempo que tarda un proceso en abandonar el estado $E_{i}$ o el tiempo de permanencia en dicho estado.
+		\item $\alpha_{ij}$: tiempo de primera llegada al estado $E_{j}$ partiendo de $E_{i}$
+	\end{enumerate}
+		
+
+\subsection{Clasificación según \textbf{$\xi_{i}$}}
+ Denotaremos $\xi_{i}$ el tiempo de permanencia en un estado $E_{i}$, concretamente, suponemos que el proceso en el instante s está en el estado $E_{i}$, definiremos entonces:
+
+\begin{equation*}
+	\xi_{i}=inf \{ t:t > 0, x_{s+t}\neq i \}
+\end{equation*}
+
+\begin{prop}
+	
+El tiempo de estancia en un estado $E_{i}$ sigue una distribución exponiencial de parámetro $q_{i}$.
+
+\end{prop}
+
+
+La propiedad de Markov nos da que:
+\begin{equation*}
+ P[X_{i} \geq t+s/X_{i} \geq t]= P[X_{i}  \geq s] \hspace{0.2cm} \forall t, s
+\end{equation*}
+
+La única distribución continua que sigue la propiedad de pérdida de memoria es la exponencial.
+
+\begin{equation*}
+	P[X_ \leq t+s/X \geq t]= \frac{P[t  \geq X  \geq t+s]}{P[X \geq t]}=\frac{\exp(-\lambda t)-\exp(-\lambda(t+s))}{\exp(-\lambda t)}=1-\exp(-\lambda s)=P[X\leq s]
+\end{equation*}
+
+
+Por tanto la esperanza de $\xi_{i}$ viene dada por $$E[\xi_{i}]= \frac{1}{q_{i}}$$
+\\
+
+Información que usaremos para la clasificación de los estados.
+\\
+
+
+\begin{itemize}
+	\item El estado $E_{i}$ es estable si:
+	 \begin{equation*}
+	 	0< q_{i} < +\infty, \hspace{0.2cm} (0<E[\xi_{i}]+\infty) 
+	 \end{equation*}
+    \item El estado $E_{i}$ es absorbente si:
+        \begin{equation*}
+    	q_{i}=0, \hspace{0.2cm} (E[\xi_{i}]=+\infty)
+        \end{equation*} 
+     \item El estado  $E_{i}$ es instantáneo si:  
+      \begin{equation*}
+      	q_{i}=+\infty, \hspace{0.2cm} (E[\xi_{i}]=0)
+      \end{equation*}
+      
+\end{itemize}
+
+\begin{definition}
+	Un estado $E_{i}$ alcanza al estado $E_{j}$ si:
+
+	\begin{equation*}
+				\exists t > 0 \hspace{0.2cm}tal \hspace{0.2cm} que \hspace{0.2cm} p_{ij}(t) > 0
+	\end{equation*}
+	
+\end{definition}
+
+ \begin{definition}
+ 	Se dice que dos estados $E_{i}$ y $E_{j}$ son comunicantes si cada uno de ellos alcanza al otro:
+ 	
+ 	\begin{equation*}
+ 		\exists t_{1} > 0 \hspace{0.2cm}tal \hspace{0.2cm} que \hspace{0.2cm} p_{ij}(t_{1}) > 0 \hspace{0.2cm} y \hspace{0.2cm} \exists t_{2} > 0 \hspace{0.2cm}tal \hspace{0.2cm} que \hspace{0.2cm} p_{ij}(t_{2}) > 0
+ 	\end{equation*}
+ \end{definition}
+	\begin{definition}
+		(Recordatorio)Una clase de estados $S$ es un conjunto formado por todos los estados que se comunican entre sí.
+	\end{definition}
+	\begin{definition}
+		Una clase de estados es cerrada si $$p_{ij}=0, \hspace{0.2cm} \forall t >0,\hspace{0.2cm} \forall E_{i} \in S,\hspace{0.2cm} \forall E_{j} \notin S$$
+	\end{definition}
+	
+	\begin{definition}
+		Una cadena de Markov es irreducible si todos sus estados se comunican entre sí, es decir, aquella en la que existe una única clase de estados.
+	\end{definition}
+	\begin{prop}
+	Una cadena irreducible no puede tener estados absorbentes. 
+	\end{prop}
+\subsection{Clasificación según \textbf{$\alpha_{ij}$}}
+ Denotaremos $\alpha_{ij}$ tiempo de primera llegada al estado $E_{j}$ partiendo de $E_{i}$, más concretamente, si suponemos que el proceso en el instante s, se encuentra en el estado $E_{i}$, definiremos entonces: 
+ 
+	 \begin{equation*}
+ \alpha_{ij}=inf \{ t: t>\xi_{i}, x_{s+t}=j \}
+	 \end{equation*}
+ \\
+ 
+ Si $i$=$j$, $\alpha_{ii}$ es el menor tiempo de retorno del proceso al estado $E_{i}$ desde que lo abandona.
+ 
+ \begin{definition} Denotaremos como $F_{ij}(t)$ a la función de distribución de $\alpha_{ij}$:
+ 	\begin{equation*}
+ 		F_{ij}(t) = \left\{
+ 		\begin{array}{cl}
+ 			P[\alpha_{ij}<t]&\mbox{si } t > 0\\
+ 			0&\mbox{si } t\leq 0
+ 		\end{array}\right.
+ 	\end{equation*}
+ \end{definition}
+  
+  \begin{definition} Si el $E_{i}$ es absorbente: 
+  	
+  	\begin{equation*}
+  		F_{ii}(t) = \left\{
+  		\begin{array}{cl}
+  		1&\mbox{si } t > 0\\
+  			0&\mbox{si } t\leq 0
+  		\end{array}\right.
+  	\end{equation*}
+  	   		\\
+  Y $F_{ij}(t)$ será nula  $\forall j \in S$ y $\forall t \in (-\infty,+\infty)$
+    \end{definition}
+    \begin{flushleft}
+    	Clasificaremos los estados $E_{i}$ a través de la función de distribución $F_{ii}(t)$
+    \end{flushleft}
+    
+   \begin{itemize}
+   	\item Un estado $E_{i}$ es transitorio si:
+   	\begin{equation*}
+   	\lim\limits_{t\rightarrow \infty}F_{ii}(t)<1
+   	\\
+   	\hspace{0.2cm} (\Leftrightarrow \int_0^\infty\!\!p_{ii}(t)\,dt<\infty)
+   	\end{equation*}
+   	\item  Un estado $E_{i}$ es recurrente si:
+   	\begin{equation*}
+   		\lim\limits_{t\rightarrow \infty}F_{ii}(t)=1
+   		\\
+   		\hspace{0.2cm} (\Leftrightarrow \int_0^\infty\!\!p_{ii}(t)\,dt=\infty)
+   	\end{equation*}
+   	\item Sea $E_{i}$ un estado recurrente y $\mu_{i}$ = $E[\alpha_{ii}]$
+   	\\
+   	   	\begin{itemize}
+   		\item $E_{i}$ es un estado recurrente nulo si:
+   		\begin{equation*}
+   		\mu_{i}= \infty
+   		\end{equation*}
+   		\item $E_{i}$ es un estado recurrente positivo o ergódico si:
+   		\begin{equation*}
+   		\mu_{i}< \infty
+   		\end{equation*}
+   	\end{itemize}
+   \end{itemize}
 \section{Teoremas límite}
 A continuación presentamos el Teorema Ergódico.
-\begin{theorem}
+\begin{theorem}[Teorema ergódico]
 Para una cadena de Markov irreducible se verifica:
 \begin{enumerate}
 \item Si todos los estados son recurrentes positivos:

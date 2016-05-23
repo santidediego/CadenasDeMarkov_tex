@@ -58,7 +58,7 @@ En las cadenas de Markov en tiempo continuo, consideramos un $t\in T \subset \ma
     Primero de todo presentamos dos definiciones equivalentes de Cadenas de Markov en tiempo continuo:
     \newline
     \begin{block}{Definición 1: Cadena de Markov}
-Decimos que $\{\mathbb{X}_t\}_{t\geq 0}$, proceso estocástico en tiempo continuo es una Cadena de Markov en tiempo continuo si $\forall t,s\geq 0$ y $\forall i,j,x_u\in E$ con $0\geq u \geq s$, se cumple que:
+Decimos que $\{\mathbb{X}_t\}_{t\geq 0}$, proceso estocástico en tiempo continuo es una Cadena de Markov en tiempo continuo si $\forall t,s\geq 0$ y $\forall i,j,x_u\in E$ con $0\geq u < s$, se cumple que:
 $$P(\mathbb{X}_{t+s}=j \, | \, \mathbb{X}_s =i \, , \,  \mathbb{X}_u =  u \,\, \forall 0\leq u\leq s)=P(\mathbb{X}_{t+s}=j \, | \, \mathbb{X}_s = i)$$
     \end{block}
 
@@ -123,9 +123,20 @@ donde:
 \end{itemize}
 \end{frame}
 \section{Ecuación de Kolmogorov}
+
 \begin{frame}
     \frametitle{Ecuación de Kolmogorov}
-    Esto es una introducción
+    \begin{block}{Teorema de las Ecuaciones Diferenciales de Kolmogorov}
+    Sea $\mathbb{X}_{t}$ con $t \in [0,\infty)$ es una cadena de Markov que no tiene nigún estado instantáneo. Entonces las probabilidades de transición son diferenciables en $t$ y $\forall i,j$, par de estados, se tiene:
+\begin{itemize}
+			\item $P'(t) = P(t)Q\hspace{0.1cm}y\hspace{0.1cm}P(0) = I \iff \frac{dp_{ij}(t)}{dt} = -p_{ij}q_{j} + \sum_{k \neq j} p_{ik}(t)q_{kj} \hspace{0.5cm}$
+			\newline
+			$ p_{ij}(0) = \delta_{ij}$  (Ecuación adelantada)
+			\item $P'(t) = QP(t)\hspace{0.1cm}y\hspace{0.1cm}P(0) = I\iff \frac{dp_{ij}(t)}{dt} = -q_{i}p_{ij} + \sum_{k \neq j} q_{ik}p_{kj}(t)$
+			\newline
+			$p_{ij}(0) = \delta_{ij}$   (Ecuación atrasada)
+\end{itemize}
+    \end{block}
 \end{frame}
 
 \section{Clasificación de los estados}
