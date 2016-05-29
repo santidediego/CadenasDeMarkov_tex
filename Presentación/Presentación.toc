@@ -2,11 +2,10 @@
 \select@language {spanish}
 \beamer@sectionintoc {1}{Introducci\IeC {\'o}n}{2}{0}{1}
 \beamer@sectionintoc {2}{Definici\IeC {\'o}n y propiedades}{6}{0}{2}
-\beamer@sectionintoc {3}{Probabilidades de transici\IeC {\'o}n}{10}{0}{3}
-\beamer@subsectionintoc {3}{1}{Q-matriz}{14}{0}{3}
-\beamer@sectionintoc {4}{Ecuaci\IeC {\'o}n de Kolmogorov}{16}{0}{4}
-\beamer@sectionintoc {5}{Clasificaci\IeC {\'o}n de los estados}{18}{0}{5}
-\beamer@sectionintoc {6}{Teoremas l\IeC {\'\i }mite}{20}{0}{6}
-\beamer@sectionintoc {7}{Relaci\IeC {\'o}n con la teor\IeC {\'\i }a de aut\IeC {\'o}matas}{22}{0}{7}
-\beamer@sectionintoc {8}{Ejemplos}{29}{0}{8}
-\beamer@subsectionintoc {8}{1}{Ejemplo 1}{30}{0}{8}
+\beamer@sectionintoc {3}{Probabilidades de transici\IeC {\'o}n}{11}{0}{3}
+\beamer@subsectionintoc {3}{1}{Q-matriz}{15}{0}{3}
+\beamer@sectionintoc {4}{Ecuaci\IeC {\'o}n de Kolmogorov}{17}{0}{4}
+\beamer@sectionintoc {5}{Clasificaci\IeC {\'o}n de los estados}{19}{0}{5}
+\beamer@sectionintoc {6}{Teoremas l\IeC {\'\i }mite}{25}{0}{6}
+\beamer@sectionintoc {7}{Aplicaciones}{27}{0}{7}
+\beamer@sectionintoc {8}{Relaci\IeC {\'o}n con la teor\IeC {\'\i }a de aut\IeC {\'o}matas}{29}{0}{8}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.24)  23 MAY 2016 11:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.24)  29 MAY 2016 17:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -344,6 +344,9 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 
 LaTeX Warning: Label `fig:ejemplo' multiply defined.
 
+
+LaTeX Warning: Label `fig:ejemplo' multiply defined.
+
 )
 \openout1 = `apuntes.aux'.
 
@@ -498,29 +501,28 @@ it/12 i[] \OMS/cmsy/m/n/12 j \U/msb/m/n/12 X[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/
  []
 
 
-Overfull \hbox (6.59215pt too wide) in paragraph at lines 91--103
-\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\U/msb/m/n/12 X[] \OT1/cmr/m/n/12 = \OML/cmm
-/m/it/12 i[] \OMS/cmsy/m/n/12 j \U/msb/m/n/12 X[] \OT1/cmr/m/n/12 = \OML/cmm/m/
-it/12 i[] k \OT1/cmr/m/n/12 = 0\OML/cmm/m/it/12 ; :::; n\OT1/cmr/m/n/12 ) = \OM
-L/cmm/m/it/12 P\OT1/cmr/m/n/12 (\U/msb/m/n/12 X[] \OT1/cmr/m/n/12 = \OML/cmm/m/
-it/12 i[]; [][] \U/msb/m/n/12 X[] \OT1/cmr/m/n/12 =
+Overfull \hbox (17.44237pt too wide) in paragraph at lines 91--103
+\OML/cmm/m/it/12 i[]; [] ; [] \U/msb/m/n/12 X[] \OT1/cmr/m/n/12 = \OML/cmm/m/it
+/12 i[] \OMS/cmsy/m/n/12 j \U/msb/m/n/12 X[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12
+ i[] k \OT1/cmr/m/n/12 = 0\OML/cmm/m/it/12 ; :::; n\OT1/cmr/m/n/12 ) = [] [] \O
+ML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\U/msb/m/n/12 X[] \OT1/cmr/m/n/12 =
  []
 
 
-Overfull \hbox (57.45918pt too wide) in paragraph at lines 91--103
-\OML/cmm/m/it/12 i[]; [] ; [][] \U/msb/m/n/12 X[] \OT1/cmr/m/n/12 = \OML/cmm/m/
-it/12 i[] \OMS/cmsy/m/n/12 j \U/msb/m/n/12 X[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/
-12 i[] k \OT1/cmr/m/n/12 = 0\OML/cmm/m/it/12 ; :::; n\OT1/cmr/m/n/12 ) = [][] [
-][] \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\U/msb/m/n/12 X[] \OT1/cmr/m/n/12 =
- []
-
-
-Overfull \hbox (99.61389pt too wide) in paragraph at lines 91--103
+Overfull \hbox (71.15823pt too wide) in paragraph at lines 91--103
 \OML/cmm/m/it/12 i[]; \U/msb/m/n/12 X[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 i[];
  :::; \U/msb/m/n/12 X[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 i[] \OMS/cmsy/m/n/12
  j \U/msb/m/n/12 X[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 i[] k \OT1/cmr/m/n/12 =
- 0\OML/cmm/m/it/12 ; :::; n\OT1/cmr/m/n/12 ) [] [][] [][] \OML/cmm/m/it/12 P\OT
-1/cmr/m/n/12 (\U/msb/m/n/12 X[] \OT1/cmr/m/n/12 =
+ 0\OML/cmm/m/it/12 ; :::; n\OT1/cmr/m/n/12 ) [] [] [] \OML/cmm/m/it/12 P\OT1/cm
+r/m/n/12 (\U/msb/m/n/12 X[] \OT1/cmr/m/n/12 =
+ []
+
+
+Underfull \hbox (badness 1360) in paragraph at lines 91--103
+\OML/cmm/m/it/12 i[]; [] \U/msb/m/n/12 X[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 i
+[]; :::; [] \U/msb/m/n/12 X[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 i[] \OMS/cmsy/
+m/n/12 j \U/msb/m/n/12 X[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 i[]\OT1/cmr/m/n/1
+2 ) =
  []
 
 
@@ -567,12 +569,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--137
 
  []
 
-[6 <./img/grafo.png>] <img/afd.png, id=40, 803.0pt x 602.25pt>
+[6 <./img/grafo.png>] <img/afd.png, id=40, 688.5725pt x 333.245pt>
 File: img/afd.png Graphic file (type png)
 
 <use img/afd.png>
 Package pdftex.def Info: img/afd.png used on input line 149.
-(pdftex.def)             Requested size: 312.00119pt x 234.00354pt.
+(pdftex.def)             Requested size: 312.00119pt x 150.99617pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 144--152
 
@@ -698,84 +700,83 @@ m/m/it/12 t\OT1/cmr/m/n/12 ) [] \OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 q[]p[] \OT
  []
 
 [13]
-Underfull \hbox (badness 1888) in paragraph at lines 351--351
+Underfull \hbox (badness 1888) in paragraph at lines 366--366
 []\OT1/cmr/bx/n/17.28 Probabilidades absolutas y distribuci^^Son
  []
 
-
-Overfull \hbox (11.92043pt too wide) detected at line 368
-\OML/cmm/m/it/12 a\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = (\OML/
-cmm/m/it/12 a[]\OT1/cmr/m/n/12 ; \OML/cmm/m/it/12 j \OMS/cmsy/m/n/12 2 \OML/cmm
-/m/it/12 S\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ;  que en forma matricial viene dad
-o por a\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 
-a\OT1/cmr/m/n/12 (0)\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/c
-mr/m/n/12 )
- []
-
 [14]
-Underfull \hbox (badness 1990) in paragraph at lines 398--399
-[]\OT1/cmr/m/it/12 El tiempo de estancia en un estado $\OML/cmm/m/it/12 E[]$ \O
-T1/cmr/m/it/12 sigue una
- []
+Underfull \hbox (badness 10000) in paragraph at lines 412--415
 
-
-Overfull \hbox (104.1041pt too wide) detected at line 412
-\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 X[]t \OT1/cmr/m/n/12 + \OML
-/cmm/m/it/12 s=X \OMS/cmsy/m/n/12 ^^U \OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ] = [] 
-= [] = 1 \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@\OML/cmm/m
-/it/12 ^^Us\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 [\OML/cmm/m/it
-/12 X \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 s\OT1/cmr/m/n/12 ]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 415--417
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 418--420
-
- []
-
-
-Underfull \hbox (badness 1442) in paragraph at lines 455--456
-[]\OT1/cmr/m/it/12 (Recordatorio)Una clase de estados $\OML/cmm/m/it/12 S$ \OT1
-/cmr/m/it/12 es un conjunto
  []
 
 [15]
-Underfull \hbox (badness 2142) in paragraph at lines 465--466
+Underfull \hbox (badness 10000) in paragraph at lines 440--442
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--486
+
+ []
+
+[16] [17] [18]
+Underfull \hbox (badness 2142) in paragraph at lines 589--590
 []\OT1/cmr/m/it/12 Una ca-dena ir-re-ducible no puede tener es-ta-dos ab-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 472--474
-
- []
-
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 516--518
+Underfull \hbox (badness 10000) in paragraph at lines 592--593
 
  []
 
 
-Underfull \hbox (badness 1303) in paragraph at lines 532--533
+Underfull \hbox (badness 10000) in paragraph at lines 596--597
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 598--599
+
+ []
+
+[19]
+Underfull \hbox (badness 1303) in paragraph at lines 606--607
 []\OT1/cmr/m/it/12 Para una ca-dena de Markov ir-re-
  []
 
-[17] [18] (./apuntes.aux)
+[20] <img/ejemplo.png, id=89, 515.9275pt x 278.03876pt>
+File: img/ejemplo.png Graphic file (type png)
+ <use img/ejemplo.png>
+Package pdftex.def Info: img/ejemplo.png used on input line 638.
+(pdftex.def)             Requested size: 272.99881pt x 147.1265pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--642
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--642
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--642
+
+ []
+
+[21 <./img/ejemplo.png>] (./apuntes.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2662 strings out of 493089
- 34359 string characters out of 6134841
- 99851 words of memory out of 5000000
- 6095 multiletter control sequences out of 15000+600000
+ 2667 strings out of 493089
+ 34449 string characters out of 6134841
+ 99850 words of memory out of 5000000
+ 6099 multiletter control sequences out of 15000+600000
  13810 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,10n,24p,1051b,232s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,10n,24p,1064b,242s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pf
 b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
@@ -794,10 +795,10 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
 015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on apuntes.pdf (18 pages, 286034 bytes).
+Output written on apuntes.pdf (21 pages, 376600 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
+ 152 PDF objects out of 1000 (max. 8388607)
+ 103 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

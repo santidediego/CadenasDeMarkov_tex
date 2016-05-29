@@ -58,8 +58,8 @@ En las cadenas de Markov en tiempo continuo, consideramos un $t\in T \subset \ma
     Primero de todo presentamos dos definiciones equivalentes de Cadenas de Markov en tiempo continuo:
     \newline
     \begin{block}{Definición 1: Cadena de Markov}
-Decimos que $\{\mathbb{X}_t\}_{t\geq 0}$, proceso estocástico en tiempo continuo es una Cadena de Markov en tiempo continuo si $\forall t,s\geq 0$ y $\forall i,j,x_u\in E$ con $0\geq u < s$, se cumple que:
-$$P(\mathbb{X}_{t+s}=j \, | \, \mathbb{X}_s =i \, , \,  \mathbb{X}_u =  u \,\, \forall 0\leq u\leq s)=P(\mathbb{X}_{t+s}=j \, | \, \mathbb{X}_s = i)$$
+Decimos que $\{\mathbb{X}_t\}_{t\geq 0}$, proceso estocástico en tiempo continuo es una Cadena de Markov en tiempo continuo si $\forall t,s\geq 0$ y $\forall i,j,x_u\in E$ con $0\leq u <s$, se cumple que:
+$$P(\mathbb{X}_{t+s}=j \, | \, \mathbb{X}_s =i \, , \,  \mathbb{X}_u =  u \,\, \forall 0\leq u< s)=P(\mathbb{X}_{t+s}=j \, | \, \mathbb{X}_s = i)$$
     \end{block}
 
 \end{frame}
@@ -69,7 +69,12 @@ $$P(\mathbb{X}_{t+s}=j \, | \, \mathbb{X}_s =i \, , \,  \mathbb{X}_u =  u \,\, \
 $$P(\mathbb{X}_{t_{n+1}}=i_{n+1}\, | \, \mathbb{X}_{t_0}=i_0 , \ldots \mathbb{X}_{t_n}=i_n)=P(\mathbb{X}_{t_{n+1}}=i_{n+1}\, | \, \mathbb{X}_{t_n}=i_n)$$
     \end{block}
 \end{frame}
-
+\begin{frame}
+\begin{block}{Definición de cadena de Markov homogénea en tiempo continuo}
+Una CMTC se dice homogénea si la probabilidad de ir del estado $i$ al estado $j$ no depende del instante de tiempo en el que se encuentra la cadena, formalmente esto es:
+$$P(\mathbb{X}_{t_n}=j \, | \, \mathbb{X}_{t_{n-1}}=i)=P(\mathbb{X}_{t_1}=j \, | \, \mathbb{X}_{t_0}=i)$$
+\end{block}
+\end{frame}
 \begin{frame}
 Una vez vistas las dos definiciones anteriores estamos preparados para enunciar dos propiedades muy importantes de Cadenas de Markov de tiempo continuo:
 \begin{block}{Primera propiedad}
@@ -142,9 +147,58 @@ donde:
 \section{Clasificación de los estados}
 \begin{frame}
     \frametitle{Clasificación de los estados}
-    Esto es una introducción
+    A continuación clasificaremos los estados de una cadena de Markov según:
+	\begin{enumerate}
+		\item $\xi_{i}$: tiempo que tarda un proceso en abandonar el estado $E_{i}$ o el tiempo de permanencia en dicho estado.
+		\item $\alpha_{ij}$: tiempo de primera llegada al estado $E_{j}$ partiendo de $E_{i}$
+		\item Clasificación según la posibilidad de ir de un estado a otro
+	\end{enumerate}
 \end{frame}
+\begin{frame}{Clasificación según $\xi_{i}$}
+ Denotaremos $\xi_{i}$ el tiempo de permanencia en un estado $E_{i}$, concretamente, suponemos que el proceso en el instante s está en el estado $E_{i}$, definiremos entonces:
+ \begin{equation*}
+	\xi_{i}=inf \{ t:t > 0, x_{s+t}\neq i \}
+\end{equation*}
+\begin{block}{Proposición}
+El tiempo de estancia en un estado $E_{i}$ sigue una distribución exponencial de parámetro $q_{i}$.
+\end{block}
+\end{frame}
+\begin{frame}{Clasificación según $\alpha_{ij}$}
+Denotaremos $\alpha_{ij}$ tiempo de primera llegada al estado $E_{j}$ partiendo de $E_{i}$, más concretamente, si suponemos que el proceso en el instante s, se encuentra en el estado $E_{i}$, definiremos entonces: 
+	 \begin{equation*}
+ \alpha_{ij}=inf \{ t: t>\xi_{i}, x_{s+t}=j \}
+	 \end{equation*}
+ \begin{block}{Definición}
+Denotaremos como $F_{ij}(t)$ a la función de distribución de $\alpha_{ij}$:
+ 	\begin{equation*}
+ 		F_{ij}(t) = \left\{
+ 		\begin{array}{cl}
+ 			P[\alpha_{ij}<t]&\mbox{si } t > 0\\
+ 			0&\mbox{si } t\leq 0
+ 		\end{array}\right.
+ 	\end{equation*}
+ \end{block}
+\end{frame}
+\begin{frame}{Clasificación según la posibilidad de ir de un estado a otro}
+\begin{block}{Definición 1}
+   	Un estado $E_{i}$ alcanza al estado $E_{j}$ si siempre es posible llegar del estado i al j en un determinado tiempo:
 
+   	\begin{equation*}
+   		\exists t > 0 \hspace{0.2cm}tal \hspace{0.2cm} que \hspace{0.2cm} p_{ij}(t) > 0
+   	\end{equation*}
+\end{block}
+\begin{block}{Definición 2}
+Una clase de estados $S$ es un conjunto formado por todos los estados que se comunican entre sí. Diremos que una clase de estados es cerrada si los estados de dicha clase solo se comnunican entre ellos: $$p_{ij}=0, \hspace{0.2cm} \forall t >0,\hspace{0.2cm} \forall E_{i} \in S,\hspace{0.2cm} \forall E_{j} \notin S$$
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{Definición 3}
+Una clase de estados será minimal si es cerrada y no contiene subclases propias cerradas
+\end{block}
+\begin{block}{Proposición}
+	Una cadena irreducible no puede tener estados absorbentes. 
+\end{block}
+\end{frame}
 \section{Teoremas límite}
 \begin{frame}
     \frametitle{Teoremas límite}
@@ -159,7 +213,19 @@ $$\lim_{t\rightarrow\infty}p_{ij}(t)=0\, , \, \forall i,j \in S\, ;\,\,\, \lim_{
 \end{enumerate}
     \end{block}
 \end{frame}
-
+\section{Aplicaciones}
+\begin{frame}{Aplicaciones}
+\begin{itemize}
+\item Modelos epidemiológicos
+\item Internet
+\item Simulación
+\item Juegos de azar
+\item Economía y finanzas
+\item Genética
+\item Música
+\item Redes neuronales
+\end{itemize}
+\end{frame}
 \section{Relación con la teoría de autómatas}
 \begin{frame}{Relación con la teoría de autómatas}
 \begin{block}{Definición de Grafo de una CMTC}
@@ -222,15 +288,5 @@ $\delta(q_0,1)=q_1 \,\,\,\,\,\,\,  \delta(q_1,1)=q_2 \,\,\,\,\,\,\,\delta(q_2,1)
 De manera intuitiva, podemos ver la relación entre el grafo de una CMTC y un AFD, sin más que considerar que este último tiene $F={\emptyset}$, es decir, no tiene estados finales.
 \newline\newline
 Además podemos ver la correspondencia: $Q=E\, ,\, \sum=W$ y $| \delta |=U$
-\end{frame}
-\section{Ejemplos}
-\subsection{Ejemplo 1}
-\begin{frame}
-    \frametitle{Ejemplos}
-    Esto es una introducción
-\end{frame}
-\begin{frame}
-    \frametitle{Ejemplo 1}
-    Esto es una introducción
 \end{frame}
 \end{document}
