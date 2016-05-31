@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.24)  29 MAY 2016 17:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.24)  31 MAY 2016 11:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1314,7 +1314,7 @@ LaTeX Info: Redefining \% on input line 2.
 ) [26
 
 ]
-Overfull \vbox (9.50313pt too high) detected at line 227
+Overfull \vbox (9.50313pt too high) detected at line 226
  []
 
 [27
@@ -1334,28 +1334,28 @@ LaTeX Info: Redefining \% on input line 2.
 ] [31
 
 ]
-<img/grafo.png, id=1253, 646.415pt x 113.42375pt>
+<img/grafo.png, id=1252, 646.415pt x 113.42375pt>
 File: img/grafo.png Graphic file (type png)
  <use img/grafo.png>
-Package pdftex.def Info: img/grafo.png used on input line 262.
+Package pdftex.def Info: img/grafo.png used on input line 261.
 (pdftex.def)             Requested size: 308.06367pt x 54.05508pt.
  [32
 
  <./img/grafo.png>] [33
 
-] <img/afd.png, id=1326, 803.0pt x 602.25pt>
+] <img/afd.png, id=1325, 803.0pt x 602.25pt>
 File: img/afd.png Graphic file (type png)
 
 <use img/afd.png>
-Package pdftex.def Info: img/afd.png used on input line 284.
+Package pdftex.def Info: img/afd.png used on input line 283.
 (pdftex.def)             Requested size: 308.06367pt x 231.05368pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig:ejemplo})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.284 \end{frame}
+l.283 \end{frame}
                  
-Overfull \vbox (70.4401pt too high) detected at line 284
+Overfull \vbox (70.4401pt too high) detected at line 283
  []
 
 [34
@@ -1374,14 +1374,14 @@ Overfull \vbox (70.4401pt too high) detected at line 284
 \tf@snm=\write8
 \openout8 = `Presentación.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 304.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 304.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 303.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 303.
  (./Presentación.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 304.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 304.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 303.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 303.
 Package rerunfilecheck Info: File `Presentación.out' has not changed.
 (rerunfilecheck)             Checksum: 508323E114C2DCCD4DE46F22920DB8B8;541.
 
@@ -1392,7 +1392,7 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 304.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 303.
  ) 
 Here is how much of TeX's memory you used:
  18081 strings out of 493089
@@ -1412,13 +1412,12 @@ r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr
 ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/l
 ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/lo
 cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Presentación.pdf (36 pages, 283087 bytes).
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Presentación.pdf (36 pages, 275485 bytes).
 PDF statistics:
- 1493 PDF objects out of 1728 (max. 8388607)
- 1402 compressed objects within 15 object streams
+ 1488 PDF objects out of 1728 (max. 8388607)
+ 1399 compressed objects within 14 object streams
  83 named destinations out of 1000 (max. 500000)
  161 words of extra memory for PDF output out of 10000 (max. 10000000)
 

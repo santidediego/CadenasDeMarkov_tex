@@ -59,7 +59,7 @@ En las cadenas de Markov en tiempo continuo, consideramos un $t\in T \subset \ma
     \newline
     \begin{block}{Definición 1: Cadena de Markov}
 Decimos que $\{\mathbb{X}_t\}_{t\geq 0}$, proceso estocástico en tiempo continuo es una Cadena de Markov en tiempo continuo si $\forall t,s\geq 0$ y $\forall i,j,x_u\in E$ con $0\leq u <s$, se cumple que:
-$$P(\mathbb{X}_{t+s}=j \, | \, \mathbb{X}_s =i \, , \,  \mathbb{X}_u =  u \,\, \forall 0\leq u< s)=P(\mathbb{X}_{t+s}=j \, | \, \mathbb{X}_s = i)$$
+$$P(\mathbb{X}_{t+s}=j \, | \, \mathbb{X}_s =i \, , \,  \mathbb{X}_u =  x_{u} \,\, \forall 0\leq u< s)=P(\mathbb{X}_{t+s}=j \, | \, \mathbb{X}_s = i)$$
     \end{block}
 
 \end{frame}
@@ -71,8 +71,7 @@ $$P(\mathbb{X}_{t_{n+1}}=i_{n+1}\, | \, \mathbb{X}_{t_0}=i_0 , \ldots \mathbb{X}
 \end{frame}
 \begin{frame}
 \begin{block}{Definición de cadena de Markov homogénea en tiempo continuo}
-Una CMTC se dice homogénea si la probabilidad de ir del estado $i$ al estado $j$ no depende del instante de tiempo en el que se encuentra la cadena, formalmente esto es:
-$$P(\mathbb{X}_{t_n}=j \, | \, \mathbb{X}_{t_{n-1}}=i)=P(\mathbb{X}_{t_1}=j \, | \, \mathbb{X}_{t_0}=i)$$
+Una CMTC se dice homogénea si la probabilidad de ir del estado $i$ al estado $j$ no depende del instante de tiempo en el que se encuentra la cadena.
 \end{block}
 \end{frame}
 \begin{frame}
@@ -134,10 +133,10 @@ donde:
     \begin{block}{Teorema de las Ecuaciones Diferenciales de Kolmogorov}
     Sea $\mathbb{X}_{t}$ con $t \in [0,\infty)$ es una cadena de Markov que no tiene nigún estado instantáneo. Entonces las probabilidades de transición son diferenciables en $t$ y $\forall i,j$, par de estados, se tiene:
 \begin{itemize}
-			\item $P'(t) = P(t)Q\hspace{0.1cm}y\hspace{0.1cm}P(0) = I \iff \frac{dp_{ij}(t)}{dt} = -p_{ij}q_{j} + \sum_{k \neq j} p_{ik}(t)q_{kj} \hspace{0.5cm}$
+			\item $P'(t) = P(t)Q\hspace{0.1cm}y\hspace{0.1cm}P(0) = I \iff \frac{dp_{ij}(t)}{dt} = -p_{ij}(t)q_{j} + \sum_{k \neq j} p_{ik}(t)q_{kj} \hspace{0.5cm}$
 			\newline
 			$ p_{ij}(0) = \delta_{ij}$  (Ecuación adelantada)
-			\item $P'(t) = QP(t)\hspace{0.1cm}y\hspace{0.1cm}P(0) = I\iff \frac{dp_{ij}(t)}{dt} = -q_{i}p_{ij} + \sum_{k \neq j} q_{ik}p_{kj}(t)$
+			\item $P'(t) = QP(t)\hspace{0.1cm}y\hspace{0.1cm}P(0) = I\iff \frac{dp_{ij}(t)}{dt} = -q_{i}p_{ij}(t) + \sum_{k \neq j} q_{ik}p_{kj}(t)$
 			\newline
 			$p_{ij}(0) = \delta_{ij}$   (Ecuación atrasada)
 \end{itemize}
@@ -145,14 +144,14 @@ donde:
 \end{frame}
 \begin{frame}
 \begin{block}{Teorema}
-Sea $p_{ij}(t)$	una matriz de transición y $\alpha$ = $\sup\limits_{j\in S} \hspace{0.2cm} q_j <0$:
+Sea $(p_{ij}(t))$	una matriz de transición y $\alpha$ = $\sup\limits_{j\in S} \hspace{0.2cm} q_j <0$:
    		\begin{equation*}
-   		p_{ij}=e^{-\beta t}\ \sum_{n = 0}^{\infty}\frac{\beta^{n} t^{n}}{n!}p_{ij}^{(n)}, t \geq 0, i,j \in S
+   		p_{ij}(t)=e^{-\beta t}\ \sum_{n = 0}^{\infty}\frac{\beta^{n} t^{n}}{n!}p_{ij}^{(n)}(t), t \geq 0, i,j \in S
    		\end{equation*}
    		
    		Donde $P$=$(p_{ij})$ es una matriz estocástica definida como:
    		\begin{equation*}
-   		P=I+\frac{1}{\beta}Q, \hspace{0.2cm} I= P^{(0)}, \hspace{0.2cm} \beta \geq \alpha
+   		P(t)=I+\frac{1}{\beta}Q, \hspace{0.2cm} I= P^{(0)}(t), \hspace{0.2cm} \beta \geq \alpha
    		\end{equation*}
 \end{block}
 \end{frame}
@@ -200,7 +199,7 @@ Denotaremos como $F_{ij}(t)$ a la función de distribución de $\alpha_{ij}$:
    	\end{equation*}
 \end{block}
 \begin{block}{Definición 2}
-Una clase de estados $S$ es un conjunto formado por todos los estados que se comunican entre sí. Diremos que una clase de estados es cerrada si los estados de dicha clase solo se comnunican entre ellos: $$p_{ij}=0, \hspace{0.2cm} \forall t >0,\hspace{0.2cm} \forall E_{i} \in S,\hspace{0.2cm} \forall E_{j} \notin S$$
+Una clase de estados $S$ es un conjunto formado por todos los estados que se comunican entre sí. Diremos que una clase de estados es cerrada si los estados de dicha clase solo se comnunican entre ellos: $$p_{ij}(t)=0, \hspace{0.2cm} \forall t >0,\hspace{0.2cm} \forall E_{i} \in S,\hspace{0.2cm} \forall E_{j} \notin S$$
 \end{block}
 \end{frame}
 \begin{frame}
@@ -218,7 +217,7 @@ Una clase de estados será minimal si es cerrada y no contiene subclases propias
     Para una cadena de Markov irreducible se verifica:
 	\begin{enumerate}
     \item Si todos los estados son recurrentes positivos:
-$$\lim_{t\rightarrow\infty}p_{i,j}(t)=u_j>0 \, , \, \forall i,j\in S$$
+$$\lim_{t\rightarrow\infty}p_{ij}(t)=u_j>0 \, , \, \forall i,j\in S$$
 Además $u=(u_j \, , \, j\in S)$ es la única distribución estacionaria de la cadena y $\displaystyle\lim_{t\rightarrow\infty}a_j (t)=u_j \, , \, \forall j\in S$. La distribución de probabilidad u es la solución del sistema $uQ=0$, siendo $Q$ la $Q$-matriz de la cadena.
 \item Si todos los estados son recurrentes nulos o transitorios,
 $$\lim_{t\rightarrow\infty}p_{ij}(t)=0\, , \, \forall i,j \in S\, ;\,\,\, \lim_{t\rightarrow\infty}a_j (t)=0\, , \, \forall j\in S$$

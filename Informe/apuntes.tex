@@ -39,17 +39,12 @@ La principal diferencia entre cadenas de Markov en tiempo discreto y tiempo cont
 Primero de todo, definiremos una Cadena de Markov como:
 \begin{definition}{\textbf{Cadena de Markov en tiempo continuo}}\\
 Sea $\{\mathbb{X}_t\}_{t\geq 0}$ un proceso estocástico en tiempo continuo, esto es, $t\in [0,T]$ con $T\in \mathbb{R}$ que toma valores en un conjunto numerable $E$. Decimos que $\{\mathbb{X}_t\}_{t\geq 0}$ es una Cadena de Markov en tiempo continuo si $\forall t,s\geq 0$ y $\forall i,j,x_u\in E$ con $0\leq u < s$, se cumple que:
-$$P(\mathbb{X}_{t+s}=j \, | \, \mathbb{X}_s =i \, , \,  \mathbb{X}_u =  u \,\, \forall 0\leq u <s)=P(\mathbb{X}_{t+s}=j \, | \, \mathbb{X}_s = i)$$
+$$P(\mathbb{X}_{t+s}=j \, | \, \mathbb{X}_s =i \, , \,  \mathbb{X}_u = x_{u} \,\, \forall 0\leq u <s)=P(\mathbb{X}_{t+s}=j \, | \, \mathbb{X}_s = i)$$
 \end{definition}
 Es decir, podemos definir una Cadena de Markov como un proceso estocástico	en el que el futuro sólo depende del presente, independientemente de sus estados pasados. Además también podemos considerar la definición alternativa:
 \begin{definition}{\textbf{Cadena de Markov en tiempo continuo}}\\
 El proceso estocástico $\{\mathbb{X}_t \, , \, t\in [0,\infty]\}$ es una Cadena de Markov en tiempo continuo si para cualquier entero $n\geq 0$, cualesquiera $0\leq t_0 < t_1 < \ldots < t_{n+1}$ y $i_0,\ldots , i_n,i_{n+1}\in S$ se verifica:
 $$P(\mathbb{X}_{t_{n+1}}=i_{n+1}\, | \, \mathbb{X}_{t_0}=i_0 , \ldots \mathbb{X}_{t_n}=i_n)=P(\mathbb{X}_{t_{n+1}}=i_{n+1}\, | \, \mathbb{X}_{t_n}=i_n)$$
-\end{definition}
-Además, introducimos también el concepto de Cadena de Markov en tiempo continuo homogénea:
-\begin{definition}{\textbf{Cadena de Markov homogénea en tiempo continuo}}\\
-Una CMTC se dice homogénea si la probabilidad de ir del estado $i$ al estado $j$ no depende del instante de tiempo en el que se encuentra la cadena, formalmente esto es:
-$$P(\mathbb{X}_{t_n}=j \, | \, \mathbb{X}_{t_{n-1}}=i)=P(\mathbb{X}_{t_1}=j \, | \, \mathbb{X}_{t_0}=i)$$
 \end{definition}
 Una vez vistas estas definiciones podemos ver las propiedades de una Cadena de Markov.
 \subsection{Propiedades}
@@ -178,7 +173,7 @@ Por último, partiendo de $P(t)$, generaremos y estudiaremos una nueva matriz, d
 Dada una CMTC $\{\mathbb{X}_t \, , \, t\in [0,\infty]\}$, definimos las probabilidades de transición como:
 $$p_{ij}(s,t):=P(\mathbb{X}_t=j\, | \, \mathbb{X}_s=i), \ 0\leq s < t, \ \ i,j\in S$$
 
-A partir de este momento, supondremos que la CMTC es homogénea. Teniendo en cuenta la expresión anterior y siguiendo la definición de Cadena de Markov homogénea en tiempo continuo, citada en la sección (2.1), tenemos que la probabilidad de ir del estado $i$ al estado $j$ no depende del instante de tiempo en el que se encuentra la cadena, es decir, $p_{ij}(s,t)$ no depende de $s$ y $t$, sólo depende de la diferencia $t-s$:
+A partir de este momento, supondremos que la CMTC es homogénea. Teniendo en cuenta la expresión anterior y siguiendo la definición de Cadena de Markov homogénea en tiempo continuo tenemos que la probabilidad de ir del estado $i$ al estado $j$ no depende del instante de tiempo en el que se encuentra la cadena, es decir, $p_{ij}(s,t)$ no depende de $s$ y $t$, sólo depende de la diferencia $t-s$:
 $$p_{ij}(s,t)=P(\mathbb{X}_t=j\, | \, \mathbb{X}_s=i)=P(\mathbb{X}_{t-s}=j\, | \, \mathbb{X}_0=i)=p_{ij}(0,t-s)=p_{ij}(t-s)$$
 Por tanto, podemos expresar las probabilidades de transición como:
 $$p_{ij}(t)=P(\mathbb{X}_t=j\, | \, \mathbb{X}_0=i)=P(\mathbb{X}_{t+s}=j\, | \, \mathbb{X}_s=i)$$
@@ -210,7 +205,7 @@ $1=P\left[\bigcup\limits_{j\in S}[\mathbb{X}_t=j]\, | \,\mathbb{X}_0=i\right]\ov
 
 $=\sum\limits_{k\in S}P\left[\mathbb{X}_{s+t}=j,\,\mathbb{X}_s=k\, | \,\mathbb{X}_0=i\right]\overset{**}{=}$
 
-$=\dfrac{P[\mathbb{X}_{s+t}=j,\,\mathbb{X}_s=k,\,\mathbb{X}_0=i]}{P[\mathbb{X}_0=i]}\overset{**}{=}$
+$=\sum\limits_{k \in S} \dfrac{P[\mathbb{X}_{s+t}=j,\,\mathbb{X}_s=k,\,\mathbb{X}_0=i]}{P[\mathbb{X}_0=i]}\overset{**}{=}$
 
 $=\sum\limits_{k\in S}P\left[\mathbb{X}_{s+t}=j\, | \,\mathbb{X}_s=k, \mathbb{X}_0=i\right]P\left[\mathbb{X}_s=k\, | \,\mathbb{X}_0=i\right]\overset{CMTC}{=}$
 
@@ -281,11 +276,11 @@ $$Q= \left\{ \begin{array}{lcc}
 	Ya que una cadena de Markov está determinada por las probabilidades de transición, que ya hemos definido, vamos a calcularlas a partir de la razón de transición. Vamos a formalizarlo con el siguiente teorema.
 	\begin{theorem}[Teorema de las Ecuaciones Diferenciales de Kolmogorov] Sea $\mathbb{X}_{t}$ con $t \in [0,\infty)$ es una cadena de Markov que no tiene nigún estado instantáneo. Entonces las probabilidades de transición son diferenciables en $t$ y $\forall i,j$, par de estados, se tiene:
 		\begin{equation*}
-			P'(t) = P(t)Q\hspace{0.1cm}y\hspace{0.1cm}P(0) = I \iff \frac{dp_{ij}(t)}{dt} = -p_{ij}q_{j} + \sum_{k \neq j} p_{ik}(t)q_{kj} \hspace{0.5cm} p_{ij}(0) = \delta_{ij} \hspace{0.5cm}
+			P'(t) = P(t)Q\hspace{0.1cm}y\hspace{0.1cm}P(0) = I \iff \frac{dp_{ij}(t)}{dt} = -p_{ij}(t)q_{j} + \sum_{k \neq j} p_{ik}(t)q_{kj} \hspace{0.5cm} p_{ij}(0) = \delta_{ij} \hspace{0.5cm}
 		\end{equation*}
 		(Ecuación adelantada)
 		\begin{equation*}
-			P'(t) = QP(t)\hspace{0.1cm}y\hspace{0.1cm}P(0) = I \iff \frac{dp_{ij}(t)}{dt} = -q_{i}p_{ij} + \sum_{k \neq j} q_{ik}p_{kj}(t) \hspace{0.5cm} p_{ij}(0) = \delta_{ij} \hspace{0.5cm}
+			P'(t) = QP(t)\hspace{0.1cm}y\hspace{0.1cm}P(0) = I \iff \frac{dp_{ij}(t)}{dt} = -q_{i}p_{ij}(t) + \sum_{k \neq j} q_{ik}p_{kj}(t) \hspace{0.5cm} p_{ij}(0) = \delta_{ij} \hspace{0.5cm}
 		\end{equation*}
 		(Ecuación atrasada)
 	\end{theorem}
@@ -309,11 +304,11 @@ $$Q= \left\{ \begin{array}{lcc}
 		\end{equation*}
 		Si ahora aplicamos (1):
 		\begin{equation*}
-			\lim_{h \rightarrow 0} \sum_{k \neq j}\frac{p_{ik}(t)p_{kj}(h)}{h} - \lim_{h \rightarrow 0}\frac{p_{jj}(h) - 1}{h}p_{ij}(t) \overbrace{=}^{*} -p_{ij}q_{j} + \sum_{k \neq j} p_{ik}(t)q_{kj}\hspace{0.5cm} \text{(Ecuación adelantada)}
+			\lim_{h \rightarrow 0} \sum_{k \neq j}\frac{p_{ik}(t)p_{kj}(h)}{h} - \lim_{h \rightarrow 0}\frac{p_{jj}(h) - 1}{h}p_{ij}(t) \overbrace{=}^{*} -p_{ij}(t)q_{j} + \sum_{k \neq j} p_{ik}(t)q_{kj}\hspace{0.5cm} \text{(Ecuación adelantada)}
 		\end{equation*}
 		Si en cambio aplicamos (2):
 		\begin{equation*}
-			\lim_{h \rightarrow 0} \sum_{k \neq i}\frac{p_{ik}(h)p_{kj}(t)}{h} - \lim_{h \rightarrow 0}\frac{p_{ii}(h) - 1}{h}p_{ij}(t) \overbrace{=}^{*} -q_{i}p_{ij} + \sum_{k \neq j} q_{ik}p_{kj}(t)\hspace{0.5cm} \text{(Ecuación atrasada)}
+			\lim_{h \rightarrow 0} \sum_{k \neq i}\frac{p_{ik}(h)p_{kj}(t)}{h} - \lim_{h \rightarrow 0}\frac{p_{ii}(h) - 1}{h}p_{ij}(t) \overbrace{=}^{*} -q_{i}p_{ij}(t) + \sum_{k \neq j} q_{ik}p_{kj}(t)\hspace{0.5cm} \text{(Ecuación atrasada)}
 		\end{equation*}
 		O en notación matricial:
 		\begin{equation*}
@@ -351,14 +346,14 @@ $$Q= \left\{ \begin{array}{lcc}
 	Ahora vamos a reformular la matriz P, definida en el apartado de la ecuación de Kolmogorov, en función de Q de forma que nos sea útil a la hora de demostrar un resultado futuro. Las expresiones son análogas, solo cambiamos la notación.
    \begin{theorem}
    	
-   		Sea $p_{ij}(t)$	una matriz de transición y $\alpha$ = $\sup\limits_{j\in S} \hspace{0.2cm} q_j <0$:
+   		Sea $(p_{ij}(t))$	una matriz de transición y $\alpha$ = $\sup\limits_{j\in S} \hspace{0.2cm} q_j <0$:
    		\begin{equation*}
-   		p_{ij}=e^{-\beta t}\ \sum_{n = 0}^{\infty}\frac{\beta^{n} t^{n}}{n!}p_{ij}^{(n)}, t \geq 0, i,j \in S
+   		p_{ij}(t)=e^{-\beta t}\ \sum_{n = 0}^{\infty}\frac{\beta^{n} t^{n}}{n!}p_{ij}^{(n)}(t), t \geq 0, i,j \in S
    		\end{equation*}
    		
-   		Donde $P$=$(p_{ij})$ es una matriz estocástica definida como:
+   		Donde $P(t)$=$(p_{ij}(t))$ es una matriz estocástica definida como:
    		\begin{equation*}
-   		P=I+\frac{1}{\beta}Q, \hspace{0.2cm} I= P^{(0)}, \hspace{0.2cm} \beta \geq \alpha
+   		P(t)=I+\frac{1}{\beta}Q, \hspace{0.2cm} I= P^{(0)}(t), \hspace{0.2cm} \beta \geq \alpha
    		\end{equation*}
    		
    \end{theorem}
@@ -369,7 +364,7 @@ $$Q= \left\{ \begin{array}{lcc}
 	Definiremos las probabilidades absolutas de una cadena de Markov (en el caso unidimensional) como la probabilidad de que una cadena se encuntre en el estado j en un tiempo t, es decir:
 
 \begin{equation*}	
-	 a_{j}=P[\mathbb{X}_{t}=j] \hspace{0.5cm}  con \hspace{0.2cm} j\in{S}, \hspace{0.2cm}  t\in[0,+\infty)
+	 a_{j}(t)=P[\mathbb{X}_{t}=j] \hspace{0.5cm}  con \hspace{0.2cm} j\in{S}, \hspace{0.2cm}  t\in[0,+\infty)
  \end{equation*}
 	La distribución absoluta de $\mathbb{X}_{t}$ se define de la siguiente forma:
 			\begin{equation*}
@@ -384,7 +379,7 @@ $$Q= \left\{ \begin{array}{lcc}
 			Una cadena de Markov con probabilidades de transición estacionarias se denomina estacionaria si las distribuciones absolutas
 		$a(t)$ son independientes de t. En dicho caso, la distribución estacionaria $a$=$(a_{j}$; $j\in{S})$, verifica que:
 		\begin{equation*}
-		a_{j}=a_{1}(0)p_{1j}(t)+a_{2}(0)p_{2j}(t)+\cdots=\sum_{i\in{S}} a_{i}(0)p_{ij}(t), \hspace{0.2cm} j\in S
+		a_{j}(t)=a_{1}(0)p_{1j}(t)+a_{2}(0)p_{2j}(t)+\cdots=\sum_{i\in{S}} a_{i}(0)p_{ij}(t), \hspace{0.2cm} j\in S
 	\end{equation*}
 \section{Clasificación de los estados}
 	Sea $\mathbb{X}_{t}$ con $t\in[0,+\infty)$,  cadena de Markov en tiempo continuo con probabilidades de transición estacionarias y sea $E_{i}$ un estado del espacio de estados.
@@ -430,8 +425,6 @@ Información que usaremos para la clasificación de los estados.
       
 \end{itemize}
 
-
-		
 \subsection{Clasificación según \textbf{$\alpha_{ij}$}}
  Denotaremos $\alpha_{ij}$ tiempo de primera llegada al estado $E_{j}$ partiendo de $E_{i}$, más concretamente, si suponemos que el proceso en el instante s, se encuentra en el estado $E_{i}$, definiremos entonces: 
  
@@ -508,7 +501,7 @@ Información que usaremos para la clasificación de los estados.
      \begin{proof}
          	\begin{enumerate}
      	
-     \item Sea M una cadena de Markov en tiempo discreto con espacio de estados S, con $P$=$(p_{ij})$ matriz de transición en un paso y $p_{ij}$ definido como en el teorema anterior. Si $p_{ii}(t)$$>$$0$, $i$$\in$S, todos los estados de S son no periódicos para M. Por tanto, $p_{ii}^{(n)}$, tiene límite cuando $n$ $\rightarrow$ $\infty$. Notaremos $\nu_{i}$ a dicho límite. Del teorema anterior obtenemos que para $i$$\in$$S$, $t$$\geq$$0$ y un $N$ natural arbitrario 
+     \item Sea M una cadena de Markov en tiempo discreto con espacio de estados S, con $P$=$(p_{ij})$ matriz de transición en un paso y $p_{ij}(t)$ definido como en el teorema anterior. Si $p_{ii}(t)$$>$$0$, $i$$\in$S, todos los estados de S son no periódicos para M. Por tanto, $p_{ii}^{(n)}$, tiene límite cuando $n$ $\rightarrow$ $\infty$. Notaremos $\nu_{i}$ a dicho límite. Del teorema anterior obtenemos que para $i$$\in$$S$, $t$$\geq$$0$ y un $N$ natural arbitrario 
       
       \begin{equation*}
       p_{ii}(t)-\nu_{i}=e^{-\beta t}\ \sum_{n = 0}^{N}\frac{\beta^{n} t^{n}}{n!}(p_{ii}^{(n)}-\nu_{i})+e^{-\beta t}\ \sum_{n = N+1}^{\infty}\frac{\beta^{n} t^{n}}{n!}(p_{ii}^{(n)}-\nu_{i}).
@@ -576,7 +569,7 @@ Información que usaremos para la clasificación de los estados.
    	\end{equation*}
    \end{definition}
     \begin{definition}
-   		Una clase de estados $S$ es un conjunto formado por todos los estados que se comunican entre sí. Diremos que una clase de estados es cerrada si los estados de dicha clase solo se comnunican entre ellos: $$p_{ij}=0, \hspace{0.2cm} \forall t >0,\hspace{0.2cm} \forall E_{i} \in S,\hspace{0.2cm} \forall E_{j} \notin S$$
+   		Una clase de estados $S$ es un conjunto formado por todos los estados que se comunican entre sí. Diremos que una clase de estados es cerrada si los estados de dicha clase solo se comnunican entre ellos: $$p_{ij}(t)=0, \hspace{0.2cm} \forall t >0,\hspace{0.2cm} \forall E_{i} \in S,\hspace{0.2cm} \forall E_{j} \notin S$$
    \end{definition}
    \begin{definition}
    Una clase de estados será minimal si es cerrada y no contiene subclases propias cerradas
@@ -606,7 +599,7 @@ A continuación presentamos el Teorema Ergódico.
 Para una cadena de Markov irreducible se verifica:
 \begin{enumerate}
 \item Si todos los estados son recurrentes positivos:
-$$\lim_{t\rightarrow\infty}p_{i,j}(t)=u_j>0 \, , \, \forall i,j\in S$$
+$$\lim_{t\rightarrow\infty}p_{ij}(t)=u_j>0 \, , \, \forall i,j\in S$$
 Además $u=(u_j \, , \, j\in S)$ es la única distribución estacionaria de la cadena y $\displaystyle\lim_{t\rightarrow\infty}a_j (t)=u_j \, , \, \forall j\in S$. La distribución de probabilidad u es la solución del sistema $uQ=0$, siendo $Q$ la $Q$-matriz de la cadena.
 \item Si todos los estados son recurrentes nulos o transitorios,
 $$\lim_{t\rightarrow\infty}p_{ij}(t)=0\, , \, \forall i,j \in S\, ;\,\,\, \lim_{t\rightarrow\infty}a_j (t)=0\, , \, \forall j\in S$$
@@ -624,7 +617,6 @@ Sin entrar en detalles, presentamos una lista con las aplicaciones más usuales 
 \item Música
 \item Redes neuronales
 \end{itemize}
-\newpage
 \section{Ejemplo}
 Una chica ha decidido salir con dos chicos a la vez, a los que llamaremos A y B por respeto a la intimidad: Para ser justa en sus visitas, ha decidido gastar un tiempo aleatorio distribuido de forma exponencial de parámetro $\lambda$, de modo que si en un instante de tiempo está con A, en un tiempo exponencialmente distribuido irá a visitar a B. Los viajes los consideraremos instantáneos. 
 \\\\
@@ -639,4 +631,9 @@ Podemos ver el grafo asociado a la cadena de Markov justo debajo:
   \caption{CMTD asociada al ejemplo}
   \label{fig:ejemplo}
 \end{figure}
+\section{Bibliografía}
+\begin{itemize}
+	\item The Single Server Queue por J.W. Cohen - Universidad de Utrecht
+	\item Procesos Estocásticos por Ricardo Pérez Ibarrola - UNED
+\end{itemize}
 \end{document}}
